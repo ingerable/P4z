@@ -37,6 +37,7 @@ char rechercher(int *tableau, long long unsigned int n, int valeur)
 
 	for (i=0; i<n; i++) {
 		if (tableau[i] == valeur) {
+			return 1;
 			trouve=1;
 		}
 	}
@@ -76,5 +77,5 @@ int main(int argc, char *argv[])
 
 	trouve = rechercher(tableau, n, valeur);
 
-    printf("Valeur trouve: %d\n",trouve);
+    printf("Valeur %d trouve: %d\n",valeur, trouve);
 }
