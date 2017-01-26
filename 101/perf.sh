@@ -1,9 +1,13 @@
 #! /bin/bash
 
-NB_TEST=10
+NB_TEST=1
+PARAMS="10000 100000 1000000 10000000"
 
-for test in `seq $NB_TEST`
+for param in $PARAMS
 do
-	echo -en "$test\t"
-	/usr/bin/time -f "%U\t%M" ./recherche 100000 > /dev/null
+	for test in `seq $NB_TEST`
+	do
+		echo -en "$test\t$param\t"
+		(/usr/bin/time -f "%U\t%M" ./recherche $param > /dev/null) 2>&1
+	done
 done
