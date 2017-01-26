@@ -1,7 +1,9 @@
 #! /bin/bash
 
-NB_TEST=1
+NB_TEST=10
 PARAMS="10000 100000 1000000 10000000"
+
+echo -e "test\ttaille\texectime\tmemory"
 
 for param in $PARAMS
 do
