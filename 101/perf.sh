@@ -1,12 +1,12 @@
 #! /bin/bash
 
-NB_TEST=50
+NB_TEST=100
 
 FUNS="generer_tableau afficher_tableau rechercher"
 
-EXES="rechercheV0 recherche"
+EXES="rechercheV0 rechercheV1 rechercheV2"
 
-echo -e "test\ttaille\texe\texectime\tmemory\tgenerer_tableau\tafficher_tableau\trechercher" > perf.dat
+echo -e "test\ttaille\texe\texectime\tmemory\tgenerer_tableau\tafficher_tableau\trechercher"
 
 
 for test in `seq $NB_TEST`
