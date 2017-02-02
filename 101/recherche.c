@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_VALEUR 15000000
+#define MAX_VALEUR 150000
 
 int *generer_tableau(long long unsigned int n) 
 {
@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
 	if (argc<2) {
 		printf("%s: opérande manquant\n",argv[0]);
 		printf("Recherche une valeur aléatoire dans un tableau d'entier aléatoire de taille n\n");
-		printf("Affiche letableau et renvoie 1 si la valeur est trouvée, 0 sinon\n");
-		printf("Usage: %s n\n",argv[0]);
+		printf("Affiche le tableau et renvoie 1 si la valeur est trouvée, 0 sinon\n");
+		printf("Usage: %s n [graine]\n",argv[0]);
 		exit(1);
 	}
 
