@@ -1,3 +1,5 @@
+Groupe OS2 : Courreau quentin, Van Assche jules
+
 Les informations sur le déroulement du module sont sur le [wiki](https://git.unistra.fr/gossa/P4z/wikis/p4z)
 
 # P4z : Complexité et performances applicatives / 101
