@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h> //Ne pas oublier d'inclure le fichier time.h
 #include "genererTableau.h"
-#define N 200
 
 void insert(long* A)
 {
@@ -30,27 +29,40 @@ void fusion(long *A,long debut, long milieu, long fin)
 {
 	long ng = milieu - debut +1; // longueur tableau g
 	long nd = fin - milieu; // longueur tableau d
-	long ag[ng]; // declaration tableau ag
-	int indG=0; // indice tableau G
-	int indD=0; //indice tableau d
-	int l = debut;
-	for(int i = debut;i<=milieu;i++) // on remplit le tableau ag à partir de A[debut,millieu]
+	long *ag = malloc(ng*sizeof(long)); // declaration tableau ag
+	long indG = 0; // indice tableau G
+	long indD = 0; //indice tableau d
+	long l = debut;
+  long j = 0;
+	for(long i = debut;i<=milieu;i++) // on remplit le tableau ag à partir de A[debut,millieu]
 	{
-		ag[i]=A[i];
+		ag[j]=A[i];
+    j++;
 	}
-	long ad[nd]; // declaration tableau ad
-	int j=0;
-	for(int i = milieu+1;i<=fin;i++)// on remplit le tableau ad à partir de A[millieu+1,fin]
+  printf("%s %ld\n","taille ag",ng);
+  for(int i=0;i<=ng;i++)
+  {
+    printf("%s %ld\n","ag[i] :",ag[i]);
+  }
+	long *ad = malloc(nd*sizeof(long)); // declaration tableau ad
+	j=0;
+	for(long i = milieu+1;i<=fin;i++)// on remplit le tableau ad à partir de A[millieu+1,fin]
 	{
 		ad[j]= A[i];
 		j++;
 	}
+  printf("%s %ld\n","taille ad",nd);
+  for(long i=0;i<=nd;i++)
+  {
+    printf("%s %ld\n","ad[i] :",ad[i]);
+  }
 	while(l<=fin)
 	{
 		if(indG==ng)
 		{
 			A[l]=ad[indD];
 			indD++;
+      //printf("%d\n", indD);
 		}else if(indD==nd)
 		{
 			A[l]=ag[indG];
@@ -58,23 +70,33 @@ void fusion(long *A,long debut, long milieu, long fin)
 		}else if(ag[indG]<ad[indD])
 		{
 			A[l]=ad[indD];
+      indG++;
 		}else{
+      //printf("%d\n", indD);
 			A[l]=ad[indD];
+      indD++;
 		}
 		l++;
 	}
 }
 
-void triFusion(long *A, long debut, long fin)
+void TriFusion(long* A, long debut, long fin)
 {
 	if(debut < fin)
 	{ //Si le tableau a plus d'un élément
 		long milieu = (debut + fin)/2;
-		triFusion(A,debut,milieu);
-		triFusion(A,debut+1,fin);
+    //printf("%s %ld\n","debut : ",debut );
+    //printf("%s %ld\n","fin :", fin );
+    //printf("%s %ld\n","milieu :", milieu );
+		TriFusion(A,debut,milieu);
+		TriFusion(A,debut+1,fin);
 		fusion(A,debut,milieu,fin);
 	}
 }
+
+/*void triFusion(long* p, long ln){
+  TriFusion(p, 0, ln -1 );
+}*/
 
 int partition(long *A, long debut, long fin)
 {
@@ -109,22 +131,24 @@ void triRapide(long *A, long debut, long fin)
 	}
 }
 
-void afficher_tableau(int *tableau)
+void afficher_tableau(long *tableau)
 {
-  printf("%s\n", "Tableau trié :");
 	int i;
 	for (i=0; i<N; i++) {
-		printf("%d ",tableau[i]);
+		printf("%ld ",tableau[i]);
 	}
 }
 
 int main()
 {
   srand(time(NULL));
-  int *tab = generer_tableau_trie_croissant(15000);
+  long *tab = generer_tableau(N);
   //insert(tab);
-	//fusion(tab, 0, N);
-  printf("\n");
+  printf("non triée \n");
+  afficher_tableau(tab);
+	TriFusion(tab, 0, N-1);
+  //triRapide(tab,0,N);
+  printf("triée :\n");
   afficher_tableau(tab);
 	printf("\n");
 	return 0;
