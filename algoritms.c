@@ -22,7 +22,7 @@ void insert(long* A)
   }
 	printf("%d\n Nombre d'écritures : ",writings );
 	printf("%d\n Nombre de comparaisons : ",cmpr );
-	printf("%d\n Nombre d'élements : ", N);
+  printf("\n");
 }
 
 void fusion(long *A,long debut, long milieu, long fin)
@@ -39,11 +39,11 @@ void fusion(long *A,long debut, long milieu, long fin)
 		ag[j]=A[i];
     j++;
 	}
-  printf("%s %ld\n","taille ag",ng);
+  /*printf("%s %ld\n","taille ag",ng);
   for(int i=0;i<=ng;i++)
   {
     printf("%s %ld\n","ag[i] :",ag[i]);
-  }
+  }*/
 	long *ad = malloc(nd*sizeof(long)); // declaration tableau ad
 	j=0;
 	for(long i = milieu+1;i<=fin;i++)// on remplit le tableau ad à partir de A[millieu+1,fin]
@@ -51,11 +51,11 @@ void fusion(long *A,long debut, long milieu, long fin)
 		ad[j]= A[i];
 		j++;
 	}
-  printf("%s %ld\n","taille ad",nd);
+  /*printf("%s %ld\n","taille ad",nd);
   for(long i=0;i<=nd;i++)
   {
     printf("%s %ld\n","ad[i] :",ad[i]);
-  }
+  }*/
 	while(l<=fin)
 	{
 		if(indG==ng)
@@ -104,9 +104,9 @@ int partition(long *A, long debut, long fin)
 	long i = debut;
 	long j;
 	long inter; // valeur intermédiaire
-	for(j=debut;j<fin-1;j++)
+	for(j=debut;j<=fin-1;j++)
 	{
-		if(A[j]<pivot)
+		if(A[j]<=pivot)
 		{
 			inter=A[j];
 			A[j]=A[i];
@@ -116,7 +116,7 @@ int partition(long *A, long debut, long fin)
 	}
 	inter=A[fin];
 	A[fin]=A[i];
-	A[fin]=inter;
+	A[i]=inter;
 	return i;
 }
 
@@ -143,11 +143,12 @@ int main()
 {
   srand(time(NULL));
   long *tab = generer_tableau(N);
-  //insert(tab);
   printf("non triée \n");
   afficher_tableau(tab);
+  //insert(tab);
 	TriFusion(tab, 0, N-1);
-  //triRapide(tab,0,N);
+  //triRapide(tab,0,N-1);
+  printf("\n");
   printf("triée :\n");
   afficher_tableau(tab);
 	printf("\n");

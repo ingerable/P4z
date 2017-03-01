@@ -20,7 +20,6 @@ long *generer_tableau_trie_croissant(long long unsigned int n)
 {
   long *tableau = malloc(n*sizeof(long));
   long long unsigned int i;
-	printf("%s\n","en dehors du for" );
 	tableau[0] = rand()%N;
   for (i=1; i<n; i++)
   {
