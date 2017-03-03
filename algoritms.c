@@ -141,6 +141,7 @@ int main(int argc, char *argv[] )
     printf("triée :\n");
     afficher_tableau(tab);
   	printf("\n");
+    //printf("%d\n",testCroissance(tab,N));
   }
 	return 0;
 }

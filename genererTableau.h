@@ -6,3 +6,4 @@
 
 long *generer_tableau();
 long *generer_tableau_trie_croissant();
+char testCroissance(long* tab, int N);

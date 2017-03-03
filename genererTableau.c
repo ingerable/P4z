@@ -26,3 +26,20 @@ long *generer_tableau_trie_croissant(long long unsigned int n)
   }
   return tableau;
 }
+
+char testCroissance(long* tab, int N)
+{
+	char res = 0;
+	for(int i=0; i<N;i++)
+	{
+		if(tab[i]>tab[i+1])
+		{
+			res = 1;
+			printf("%ld\n",tab[i]);
+		}
+		else{
+			printf("%ld\n",tab[i]);
+		}
+	}
+	return res;
+}
