@@ -132,15 +132,15 @@ int main(int argc, char *argv[] )
     srand(time(NULL));
     N = atoi(argv[1]);
     long *tab = generer_tableau(N);
-    printf("non triée \n");
-    afficher_tableau(tab);
+    //printf("non triée \n");
+    //afficher_tableau(tab);
     //insert(tab);
-  	TriFusion(tab, 0, N-1);
-    //triRapide(tab,0,N-1);
-    printf("\n");
-    printf("triée :\n");
-    afficher_tableau(tab);
-  	printf("\n");
+  	//TriFusion(tab, 0, N-1);
+    triRapide(tab,0,N-1);
+    //printf("\n");
+    //printf("triée :\n");
+    //afficher_tableau(tab);
+  	//printf("\n");
     //printf("%d\n",testCroissance(tab,N));
   }
 	return 0;
