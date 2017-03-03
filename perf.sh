@@ -2,7 +2,7 @@
 
 NB_TEST=100
 
-FUNS="generer_tableau insert"
+FUNS="insert"
 
 EXES="insertion"
 
