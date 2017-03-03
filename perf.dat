@@ -1,301 +1,101 @@
-test	taille	exe	exectime	memory	generer_tableau	afficher_tableau	rechercher
-1	18247000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1316			
-1	18247000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-1	18247000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1160			
-2	10712000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-2	10712000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-2	10712000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-3	18552000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-3	18552000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1240			
-3	18552000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-4	31547000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-4	31547000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-4	31547000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-5	25726000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-5	25726000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-5	25726000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-6	10432000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-6	10432000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-6	10432000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-7	693000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-7	693000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-7	693000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-8	18241000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-8	18241000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1160			
-8	18241000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-9	13999000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-9	13999000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1244			
-9	13999000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-10	22418000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-10	22418000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-10	22418000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-11	14262000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-11	14262000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1308			
-11	14262000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-12	14830000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-12	14830000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-12	14830000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-13	17175000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-13	17175000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-13	17175000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-14	13882000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-14	13882000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-14	13882000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1240			
-15	15707000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-15	15707000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1104			
-15	15707000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-16	12149000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1316			
-16	12149000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-16	12149000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-17	22494000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-17	22494000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1188			
-17	22494000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1244			
-18	25645000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-18	25645000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-18	25645000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-19	1561000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-19	1561000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-19	1561000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1188			
-20	14258000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-20	14258000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1108			
-20	14258000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1104			
-21	12983000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-21	12983000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-21	12983000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-22	8474000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1188			
-22	8474000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-22	8474000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-23	9779000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-23	9779000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-23	9779000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1108			
-24	19299000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-24	19299000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1308			
-24	19299000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-25	2698000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-25	2698000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-25	2698000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1244			
-26	16177000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1176			
-26	16177000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-26	16177000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-27	31585000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-27	31585000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-27	31585000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-28	18273000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-28	18273000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-28	18273000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-29	555000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-29	555000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1316			
-29	555000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-30	6567000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-30	6567000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1176			
-30	6567000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-31	25404000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-31	25404000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-31	25404000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1156			
-32	15059000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-32	15059000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1104			
-32	15059000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1108			
-33	5834000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1240			
-33	5834000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-33	5834000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-34	30762000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-34	30762000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-34	30762000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1316			
-35	24157000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1244			
-35	24157000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1160			
-35	24157000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-36	30008000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1160			
-36	30008000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-36	30008000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-37	25490000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-37	25490000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-37	25490000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-38	13954000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-38	13954000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-38	13954000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-39	23609000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1244			
-39	23609000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-39	23609000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-40	25564000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-40	25564000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-40	25564000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-41	17884000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-41	17884000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1316			
-41	17884000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1188			
-42	11513000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-42	11513000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-42	11513000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-43	21148000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-43	21148000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1188			
-43	21148000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-44	18938000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-44	18938000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-44	18938000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-45	28367000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-45	28367000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-45	28367000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-46	986000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-46	986000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-46	986000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1316			
-47	32057000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1104			
-47	32057000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-47	32057000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-48	31378000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-48	31378000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-48	31378000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-49	24614000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-49	24614000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1308			
-49	24614000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-50	13282000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-50	13282000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-50	13282000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1240			
-51	1980000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1104			
-51	1980000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-51	1980000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-52	4990000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-52	4990000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1176			
-52	4990000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-53	20988000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-53	20988000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-53	20988000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-54	18922000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-54	18922000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1316			
-54	18922000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-55	31193000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-55	31193000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1108			
-55	31193000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-56	16089000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-56	16089000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-56	16089000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-57	18582000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1180			
-57	18582000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1176			
-57	18582000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1108			
-58	17639000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-58	17639000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-58	17639000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1308			
-59	20801000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-59	20801000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-59	20801000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1160			
-60	10510000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1188			
-60	10510000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1104			
-60	10510000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-61	4720000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-61	4720000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-61	4720000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-62	7601000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-62	7601000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1100			
-62	7601000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-63	6914000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-63	6914000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-63	6914000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1108			
-64	29512000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-64	29512000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-64	29512000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-65	22618000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-65	22618000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1188			
-65	22618000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-66	10345000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-66	10345000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-66	10345000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-67	21690000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-67	21690000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-67	21690000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1160			
-68	12962000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1104			
-68	12962000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-68	12962000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-69	1544000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-69	1544000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-69	1544000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1308			
-70	16222000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-70	16222000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1180			
-70	16222000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-71	23132000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1160			
-71	23132000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-71	23132000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1160			
-72	2877000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-72	2877000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1188			
-72	2877000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-73	11177000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1244			
-73	11177000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-73	11177000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-74	9919000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-74	9919000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-74	9919000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-75	2208000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-75	2208000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-75	2208000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-76	3252000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-76	3252000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-76	3252000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1104			
-77	16576000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1304			
-77	16576000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-77	16576000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1104			
-78	21199000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-78	21199000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1108			
-78	21199000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-79	28086000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-79	28086000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-79	28086000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-80	1007000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-80	1007000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1108			
-80	1007000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1188			
-81	30645000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-81	30645000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-81	30645000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-82	15282000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-82	15282000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1308			
-82	15282000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-83	30652000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1108			
-83	30652000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1108			
-83	30652000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-84	7015000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1176			
-84	7015000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1160			
-84	7015000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-85	19481000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-85	19481000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-85	19481000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1172			
-86	11674000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1108			
-86	11674000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1176			
-86	11674000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1160			
-87	31525000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-87	31525000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-87	31525000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-88	4735000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1176			
-88	4735000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-88	4735000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1168			
-89	28908000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1172			
-89	28908000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-89	28908000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1104			
-90	24289000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1312			
-90	24289000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-90	24289000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1180			
-91	10652000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1308			
-91	10652000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-91	10652000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1188			
-92	29522000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1240			
-92	29522000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1316			
-92	29522000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-93	20527000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1164			
-93	20527000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-93	20527000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1180			
-94	5628000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-94	5628000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-94	5628000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1316			
-95	8936000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-95	8936000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-95	8936000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1164			
-96	29935000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-96	29935000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
-96	29935000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1172			
-97	10986000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1312			
-97	10986000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1184			
-97	10986000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1180			
-98	11084000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-98	11084000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1164			
-98	11084000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-99	14780000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1168			
-99	14780000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1168			
-99	14780000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1312			
-100	8117000	rechercheV1	/usr/bin/time: cannot run ./rechercheV1: No such file or directory Command exited with non-zero status 127 0.00 1184			
-100	8117000	rechercheV0	/usr/bin/time: cannot run ./rechercheV0: No such file or directory Command exited with non-zero status 127 0.00 1316			
-100	8117000	rechercheV2	/usr/bin/time: cannot run ./rechercheV2: No such file or directory Command exited with non-zero status 127 0.00 1184			
+test	taille	exe	exectime	memory	generer_tableau	insert
+1	43000	insertion	1.32 1788	0.00	1.31
+2	39000	insertion	1.08 1800	0.00	1.08
+3	45000	insertion	1.48 1820	0.00	1.48
+4	16000	insertion	0.18 1508	0.00	180.51
+5	43000	insertion	1.32 1772	0.00	1.32
+6	18000	insertion	0.23 1580	0.00	230.65
+7	53000	insertion	2.01 1864	0.00	2.02
+8	58000	insertion	2.42 1908	0.00	2.43
+9	35000	insertion	0.87 1740	0.00	872.45
+10	28000	insertion	0.56 1528	0.00	561.58
+11	55000	insertion	2.25 1824	0.00	2.25
+12	9000	insertion	0.06 1560	0.00	50.14
+13	34000	insertion	0.85 1656	0.00	842.37
+14	35000	insertion	0.88 1660	0.00	882.48
+15	42000	insertion	1.27 1784	0.00	1.27
+16	26000	insertion	0.48 1652	0.00	481.35
+17	39000	insertion	1.09 1620	0.00	1.09
+18	25000	insertion	0.45 1748	0.00	441.24
+19	0	insertion	0.00 1492	0.00	0.00
+20	27000	insertion	0.52 1704	0.00	521.46
+21	0	insertion	0.00 1396	0.00	0.00
+22	46000	insertion	1.54 1756	0.00	1.53
+23	49000	insertion	1.76 1776	0.00	1.76
+24	22000	insertion	0.34 1616	0.00	340.96
+25	37000	insertion	1.06 1768	0.00	1.05
+26	4000	insertion	0.01 1468	0.00	0.00
+27	47000	insertion	1.63 1820	0.00	1.63
+28	48000	insertion	1.70 1688	0.00	1.70
+29	12000	insertion	0.10 1528	0.00	100.28
+30	9000	insertion	0.06 1464	0.00	60.17
+31	43000	insertion	1.35 1808	0.00	1.35
+32	32000	insertion	0.74 1692	0.00	732.06
+33	16000	insertion	0.18 1560	0.00	180.51
+34	39000	insertion	1.08 1860	0.00	1.08
+35	59000	insertion	2.53 1940	0.00	2.54
+36	10000	insertion	0.07 1460	0.00	60.17
+37	1000	insertion	0.00 1404	0.00	0.00
+38	1000	insertion	0.00 1444	0.00	0.00
+39	48000	insertion	1.65 1828	0.00	1.65
+40	42000	insertion	1.25 1800	0.00	1.24
+41	41000	insertion	1.20 1804	0.00	1.20
+42	55000	insertion	2.16 1908	0.00	2.17
+43	44000	insertion	1.38 1824	0.00	1.38
+44	7000	insertion	0.03 1532	0.00	30.08
+45	55000	insertion	2.16 1880	0.00	2.17
+46	29000	insertion	0.60 1620	0.00	591.66
+47	13000	insertion	0.12 1584	0.00	120.34
+48	7000	insertion	0.03 1604	0.00	30.08
+49	6000	insertion	0.02 1476	0.00	20.06
+50	19000	insertion	0.25 1544	0.00	250.70
+51	41000	insertion	1.26 1808	0.00	1.26
+52	7000	insertion	0.04 1500	0.00	30.08
+53	24000	insertion	0.41 1672	0.00	411.15
+54	33000	insertion	0.80 1744	0.00	802.25
+55	44000	insertion	1.39 1808	0.00	1.39
+56	23000	insertion	0.38 1652	0.00	371.04
+57	35000	insertion	0.88 1744	0.00	882.48
+58	29000	insertion	0.60 1680	0.00	601.69
+59	13000	insertion	0.12 1568	0.00	110.31
+60	53000	insertion	2.00 1904	0.00	2.01
+61	46000	insertion	1.51 1912	0.00	1.51
+62	32000	insertion	0.73 1736	0.00	732.06
+63	33000	insertion	0.78 1752	0.00	782.20
+64	55000	insertion	2.17 1916	0.00	2.17
+65	55000	insertion	2.18 1880	0.00	2.19
+66	28000	insertion	0.55 1612	0.00	551.55
+67	4000	insertion	0.01 1492	0.00	0.00
+68	39000	insertion	1.08 1756	0.00	1.08
+69	15000	insertion	0.16 1500	0.00	160.45
+70	28000	insertion	0.56 1612	0.00	561.58
+71	34000	insertion	0.83 1756	0.00	822.31
+72	45000	insertion	1.45 1664	0.00	1.45
+73	24000	insertion	0.41 1660	0.00	411.15
+74	56000	insertion	2.26 1876	0.00	2.27
+75	54000	insertion	2.29 1872	0.00	2.29
+76	52000	insertion	2.06 1844	0.00	2.07
+77	17000	insertion	0.22 1524	0.00	220.62
+78	44000	insertion	1.50 1808	0.00	1.49
+79	38000	insertion	1.08 1744	0.00	1.07
+80	19000	insertion	0.27 1544	0.00	270.76
+81	36000	insertion	0.97 1720	0.00	972.73
+82	50000	insertion	1.81 1856	0.00	1.82
+83	14000	insertion	0.14 1560	0.00	140.39
+84	48000	insertion	1.64 1768	0.00	1.64
+85	35000	insertion	0.88 1756	0.00	882.48
+86	43000	insertion	1.32 1888	0.00	1.32
+87	33000	insertion	0.78 1812	0.00	782.20
+88	13000	insertion	0.12 1584	0.00	110.31
+89	54000	insertion	2.12 1916	0.00	2.13
+90	30000	insertion	0.66 1688	0.00	661.86
+91	49000	insertion	1.72 1876	0.00	1.72
+92	44000	insertion	1.37 1896	0.00	1.37
+93	22000	insertion	0.34 1644	0.00	340.96
+94	12000	insertion	0.10 1528	0.00	100.28
+95	16000	insertion	0.18 1520	0.00	170.48
+96	11000	insertion	0.08 1576	0.00	80.23
+97	28000	insertion	0.56 1704	0.00	561.58
+98	13000	insertion	0.12 1484	0.00	120.34
+99	43000	insertion	1.32 1728	0.00	1.32
+100	30000	insertion	0.65 1712	0.00	651.83
