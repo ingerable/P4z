@@ -1,17 +1,17 @@
 #! /bin/bash
 
-NB_TEST=100
+NB_TEST=1000
 
-FUNS="TriFusion triRapide insert"
+FUNS="TriFusion"
 
-EXES="fus rap ins"
+EXES="fus"
 
-echo -e "test\ttaille\texe\texectime\tmemory"
+echo -e "test\ttaille\texe\texectime\tmemory\tmmm"
 
 
 for test in `seq $NB_TEST`
 do
-	param=$((($RANDOM*1000)%60000 + 10000))
+	param=$((($RANDOM*50)%1000000))
 
 	PIDS=""
 
@@ -21,10 +21,10 @@ do
 			RES="$test\t$param\t$exe\t"
 			RES="$RES`(/usr/bin/time -f "%U\t%M" ./$exe $param > /dev/null) 2>&1`"
 
-			gprof $exe > /tmp/gprof.$exe.out
+			gprof $exe > ./gprof.$exe.out
 			for fun in $FUNS
 			do
-				RES="$RES\t`cat /tmp/gprof.$exe.out | grep $fun | awk '{print $4}' | head -1`"
+				RES="$RES\t`cat ./gprof.$exe.out | grep $fun | awk '{print $4}' | head -1`"
 			done
 
 			echo -e $RES

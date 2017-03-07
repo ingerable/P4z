@@ -5,14 +5,14 @@
 library(ggplot2)
 
 # Chargement des données
-perf <- read.table("perf.dat", header=TRUE, fill=TRUE)
-insertionV0 <- perf[perf$exe == 'insertion',]
+perf <- read.table("decroissantFusion.dat", header=TRUE, fill=TRUE)
+#insertion <- perf[perf$exe == 'insertion',]
 
 
 # Analyses de la version initiale
-png("insertion.png")
-i<-qplot(taille, exectime, data=perf, main="insertion fusion rapide sur tableau valeurs aléatoires",
-geom=c("point","smooth"))
+png("fusionDecroissant.png")
+i<-qplot(taille, exectime, data=perf, main="fusion sur tableau valeurs decroissantes",
+geom="smooth", color = exe)
 print(i)
 dev.off()
 

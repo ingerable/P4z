@@ -131,11 +131,11 @@ int main(int argc, char *argv[] )
   }else{
     srand(time(NULL));
     N = atoll(argv[1]);
-    long *tab = generer_tableau(N);
+    long *tab = generer_tableau_trie_decroissant(N);
     //printf("non triée \n");
     //afficher_tableau(tab);
-    //insert(tab);
-  	TriFusion(tab, 0, N-1);
+    insert(tab);
+  	//TriFusion(tab, 0, N-1);
     //triRapide(tab,0,N-1);
     //printf("\n");
     //printf("triée :\n");

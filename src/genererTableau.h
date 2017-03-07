@@ -4,6 +4,7 @@
 
 //#define N 5
 
-long *generer_tableau();
-long *generer_tableau_trie_croissant();
+long *generer_tableau(long long unsigned int n);
+long *generer_tableau_trie_croissant(long long unsigned int n);
+long *generer_tableau_trie_decroissant(long long unsigned int n);
 char testCroissance(long* tab, int N);
