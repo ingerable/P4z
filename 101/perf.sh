@@ -1,12 +1,12 @@
 #! /bin/bash
 
-NB_TEST=1000
+NB_TEST=100
 
-FUNS="insert"
+FUNS="generer_tableau afficher_tableau rechercher"
 
-EXES="insertion"
+EXES="rechercheV0 rechercheV1 rechercheV2"
 
-echo -e "test\ttaille\texe\texectime\tmemory\tgenerer_tableau\tafficher_tableau\tinsert"
+echo -e "test\ttaille\texe\texectime\tmemory\tgenerer_tableau\tafficher_tableau\trechercher"
 
 
 for test in `seq $NB_TEST`
@@ -17,7 +17,7 @@ do
 
 	for exe in $EXES
 	do
-	(
+		(
 			RES="$test\t$param\t$exe\t"
 			RES="$RES`(/usr/bin/time -f "%U\t%M" ./$exe $param $test > /dev/null) 2>&1`"
 

@@ -4,7 +4,7 @@
 #include <time.h> //Ne pas oublier d'inclure le fichier time.h
 #include "genererTableau.h"
 
-int N; // nbr d'elements dans le tableau
+long long N; // nbr d'elements dans le tableau
 void insert(long* A)
 {
   int cmpr=0;
@@ -22,9 +22,9 @@ void insert(long* A)
     A[j]=key;
     cmpr+=1;
   }
-	printf("%d\n Nombre d'écritures : ",writings );
-	printf("%d\n Nombre de comparaisons : ",cmpr );
-  printf("\n");
+	//printf("%d\n Nombre d'écritures : ",writings );
+	//printf("%d\n Nombre de comparaisons : ",cmpr );
+  //printf("\n");
 }
 
 void fusion(long *A,long debut, long milieu, long fin)
@@ -130,13 +130,12 @@ int main(int argc, char *argv[] )
     printf("%s\n","Usage <nbr elements tableau>");
   }else{
     srand(time(NULL));
-    N = atoi(argv[1]);
-    printf("%d\n",N);
+    N = atoll(argv[1]);
     long *tab = generer_tableau(N);
     //printf("non triée \n");
     //afficher_tableau(tab);
-    insert(tab);
-  	//TriFusion(tab, 0, N-1);
+    //insert(tab);
+  	TriFusion(tab, 0, N-1);
     //triRapide(tab,0,N-1);
     //printf("\n");
     //printf("triée :\n");

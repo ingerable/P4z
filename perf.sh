@@ -2,16 +2,16 @@
 
 NB_TEST=100
 
-FUNS="insert"
+FUNS="TriFusion triRapide insert"
 
-EXES="insertion"
+EXES="fus rap ins"
 
-echo -e "test\ttaille\texe\texectime\tmemory\tgenerer_tableau\tinsert"
+echo -e "test\ttaille\texe\texectime\tmemory"
 
 
 for test in `seq $NB_TEST`
 do
-	param=$((($RANDOM*1000)%60000))
+	param=$((($RANDOM*1000)%60000 + 10000))
 
 	PIDS=""
 
@@ -24,7 +24,7 @@ do
 			gprof $exe > /tmp/gprof.$exe.out
 			for fun in $FUNS
 			do
-				RES="$RES\t`cat /tmp/gprof.$exe.out | grep $fun | awk '{print $6}' | head -1`"
+				RES="$RES\t`cat /tmp/gprof.$exe.out | grep $fun | awk '{print $4}' | head -1`"
 			done
 
 			echo -e $RES
@@ -36,3 +36,4 @@ do
 	wait $PIDS
 
 done
+
