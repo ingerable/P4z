@@ -1,10 +1,10 @@
 #! /bin/bash
 
-NB_TEST=1000
+NB_TEST=100
 
-FUNS="TriFusion triRapide insert"
+FUNS="triRapide"
 
-EXES="fus rap ins"
+EXES="rap"
 
 echo -e "test\ttaille\texe\texectime\tmemory\tmmm"
 
