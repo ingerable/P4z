@@ -1,10 +1,10 @@
 library(ggplot2)
 
-perf <-read.table("fus3.dat", header=TRUE, fill=TRUE)
+perf <-read.table("rap3.dat", header=TRUE, fill=TRUE)
 
 
-png("fusionTousTableaux.png")
-i<-qplot(taille, exectime, data=perf, main="Tri fusion tableaux croissants decroissants aléatoire non triés" ,geom="smooth", method="loess", color=exe)
+png("rapideTousTableaux.png")
+i<-qplot(taille, memory, data=perf, main="Tri rapide tableaux croissants decroissants aléatoire non triés utilisation mémoire" ,geom="smooth", method="loess", color=exe)
 print(i)
 dev.off()
 
