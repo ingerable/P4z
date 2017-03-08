@@ -102,6 +102,9 @@ Lorsque le tableau est déjà triée, on obtient en sortie :
 
 
 ## Complexité dans le meilleur des cas - Tri Rapide
+```c
+
+```
 
 ## Complexité dans le pire des cas - Tri Rapide
 Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
@@ -109,6 +112,9 @@ Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalableme
 
 ```
 ## Complexité moyenne - Tri Rapide
+```c
+
+```
 
 Utilisation : `./a.exe -n fonction`
 
