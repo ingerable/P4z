@@ -40,7 +40,7 @@ On remarque que le temps d'éxecution du tri par insertion augmente proportionne
  Néanmoins on peut voir que le tri fusion est celui qui utilise le plus de mémoire probablement à cause de la génération des sous tableaux puis de leurs fusions.
 
 
-![exectime](./Graphs/3tri/Exectime3croissant.png)
+![exectime](./Graphs/3tri/Exectime3Croissant.png)
 
 Cette fois ci on test le temps d'éxecution pour des tableaux qui ont des valeurs triées par ordre croissant.
 On constate que le temps d'éxecution du tri rapide augmente proportionellement pour des tableaux triées par ordre croissant. Le tri rapide n'est donc pas efficace pour des tableaux triés par odre croissant.
@@ -50,7 +50,15 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi à 
 
 ![exectime](./Graphs/3tri/Memory3Croissant.png)
 
-On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.
+On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau. 
+
+
+Observons le comportement des algos sur des tableaux à valeurs décroissantes.
+![exectime](./Graphs/3tri/decroissant3tri.png)
+
+
+
+
  
 
 
