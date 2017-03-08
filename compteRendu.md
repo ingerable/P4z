@@ -115,7 +115,7 @@ Complexité et temps de calcul
 Notation O()
 Conclusion
 
-## Conclusion Final
+## Conclusion Finale
 
 Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation, 
 la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se 
