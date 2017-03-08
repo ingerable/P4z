@@ -39,6 +39,17 @@ long *generer_tableau_trie_decroissant(long long unsigned int n)
   return tableau;
 }
 
+long *generer_tableau_trie_decroissant2(long long unsigned int n){
+	long *tableau = malloc(n*sizeof(long));
+	long long unsigned int i;
+	tableau[0]=rand();
+	for (i=n-1; i>0; i--)
+	{
+		tableau[i] = i;
+	}
+  return tableau;
+}
+
 long *generer_tableau_valeur_unique(long long unsigned int n)
 {
 	long *tableau = malloc(n*sizeof(long));
