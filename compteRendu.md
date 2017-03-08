@@ -92,14 +92,7 @@ Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalableme
 
 ```
 
-## Conclusion Final
 
-Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation, 
-la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se 
-précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
-ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
-Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le
-terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
 
 ## Complexité moyenne - Tri Fusion
 Lorsque le tableau est déjà triée, on obtient en sortie :
@@ -119,3 +112,13 @@ Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalableme
 
 Utilisation : `./a.exe -n fonction`
 
+
+
+## Conclusion Final
+
+Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation, 
+la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se 
+précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
+ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
+Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le
+terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
