@@ -2,16 +2,16 @@
 
 NB_TEST=1000
 
-FUNS="TriFusion"
+FUNS="TriFusion triRapide insert"
 
-EXES="fus"
+EXES="fus rap ins"
 
 echo -e "test\ttaille\texe\texectime\tmemory\tmmm"
 
 
 for test in `seq $NB_TEST`
 do
-	param=$((($RANDOM*50)%1000000))
+	param=$((($RANDOM)%100000))
 
 	PIDS=""
 

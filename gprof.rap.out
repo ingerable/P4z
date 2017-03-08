@@ -1,13 +1,11 @@
 Flat profile:
 
 Each sample counts as 0.01 seconds.
- no time accumulated
-
   %   cumulative   self              self     total           
- time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00     1385     0.00     0.00  partition
-  0.00      0.00     0.00        1     0.00     0.00  generer_tableau_trie_decroissant
-  0.00      0.00     0.00        1     0.00     0.00  triRapide
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.27      0.17     0.17     9139     0.02     0.02  partition
+  0.00      0.17     0.00        1     0.00     0.00  generer_tableau_trie_croissant
+  0.00      0.17     0.00        1     0.00   170.46  triRapide
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -45,20 +43,25 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) no time propagated
+granularity: each sample hit covers 2 byte(s) for 5.87% of 0.17 seconds
 
 index % time    self  children    called     name
-                0.00    0.00    1385/1385        triRapide [3]
-[1]      0.0    0.00    0.00    1385         partition [1]
+                0.17    0.00    9139/9139        triRapide [2]
+[1]    100.0    0.17    0.00    9139         partition [1]
 -----------------------------------------------
-                0.00    0.00       1/1           main [15]
-[2]      0.0    0.00    0.00       1         generer_tableau_trie_decroissant [2]
+                               18278             triRapide [2]
+                0.00    0.17       1/1           main [3]
+[2]    100.0    0.00    0.17       1+18278   triRapide [2]
+                0.17    0.00    9139/9139        partition [1]
+                               18278             triRapide [2]
 -----------------------------------------------
-                                2770             triRapide [3]
-                0.00    0.00       1/1           main [15]
-[3]      0.0    0.00    0.00       1+2770    triRapide [3]
-                0.00    0.00    1385/1385        partition [1]
-                                2770             triRapide [3]
+                                                 <spontaneous>
+[3]    100.0    0.00    0.17                 main [3]
+                0.00    0.17       1/1           triRapide [2]
+                0.00    0.00       1/1           generer_tableau_trie_croissant [4]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[4]      0.0    0.00    0.00       1         generer_tableau_trie_croissant [4]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -151,4 +154,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [2] generer_tableau_trie_decroissant [1] partition      [3] triRapide
+   [4] generer_tableau_trie_croissant [1] partition        [2] triRapide
