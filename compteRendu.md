@@ -2,7 +2,7 @@
 
 ## Application
 
-Nous testons 3 algorithmes de trie différents : 
+Nous testons 3 algorithmes de tri différents : 
 
 * TriFusion
 * Tri par insertion
@@ -17,7 +17,7 @@ Laptot Asus Intel Core i7-5500U CPU @ 2.40Ghz x 4
 
 Nous utilisons un script qui permet d'automatiser les tests. Le script produit
 un fichier de données variant selon les paramètres données au script.
-Les paramètres étant les fonctions voulant êtres testées, le nombre de test 
+Les paramètres étant les fonctions voulant êtres testées, le nombre de tests
 et le ou les executables voulant être executés. La taille du tableau est generée 
 de manière aléatoire dans le script.
 
@@ -26,14 +26,13 @@ de manière aléatoire dans le script.
 
 ## Résultats et analyses
 
-Pour commencer nous avons tester le temps d'execution des 3 tri sur un tableau de valeurs aléatoires
+Pour commencer, nous avons testé le temps d'exécution des 3 tris sur un tableau de valeurs générées aléatoirement et de type "long long unsigned int"
 de taille variable.
 
 ![exectime](./Graphs/3tri/Exectime.png)
 
-On remarque que le temps d'éxecution du tri par insertion augmente proportionnellement 
-à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible
-.
+On remarque que le temps d'exécution du tri par insertion augmente proportionnellement 
+à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible.
 
 ![memory](./Graphs/3tri/insertionFusionRapideMemoryCourbes.png)
 
@@ -53,13 +52,25 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi a a
 
 On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.
  
-## Tri sur tableau trié dans l'ordre croissant (meilleur des cas)
+## Complexité dans le meilleur des cas - Tri Insertion
 
-## Tri sur tableau trié dans l'ordre décroissant (pire des cas)
+## Complexité dans le pire des cas - Tri Insertion
 
-## Tri sur tableau trié aléatoirement
+## Complexité moyenne - Tri Insertion
 
 
+## Complexité dans le meilleur des cas - Tri Fusion
+
+## Complexité dans le pire des cas - Tri Fusion
+
+## Complexité moyenne - Tri Fusion
+
+
+## Complexité dans le meilleur des cas - Tri Rapide
+
+## Complexité dans le pire des cas - Tri Rapide
+
+## Complexité moyenne - Tri Rapide
 
 
 
