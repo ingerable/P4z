@@ -106,12 +106,18 @@ Utilisation : `./a.exe -n fonction`
 ## Ajouts possibles 
 
 Pour faciliter l'automatisation et la rapidité des tests nous aurions pu mettre en place un système d'arguments en ligne de commande pour selectionner le tri et le tableau voulant être testé. Nous n'avons pas eu le temps de comparer les différentes comparaisons et écritures. Tester d'autres algorithmes peut être interéssant (tri à bulles...). Nous avons mis en place 3 type de tableaux mais il aurait été possible de trouver d'autres types de tableaux plus particuliers.
+Plan :
 
 Introduction
+
 Efficacité d'un programme
+
 Nombre d'opérations d'un algorithme
-NComplexité d'un algorithme
+
+Complexité d'un algorithme
+
 Complexité et temps de calcul
+
 Notation O()
 Conclusion
 
