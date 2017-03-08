@@ -3,9 +3,9 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
-100.26      0.30     0.30    12168     0.02     0.02  partition
-  0.00      0.30     0.00        1     0.00     0.00  generer_tableau_valeur_unique
-  0.00      0.30     0.00        1     0.00   300.78  triRapide
+ 85.94      0.06     0.06   461219     0.00     0.00  fusion
+ 14.32      0.07     0.01        1    10.03    10.03  generer_tableau_trie_decroissant
+  0.00      0.07     0.00        1     0.00    60.16  TriFusion
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -43,25 +43,25 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 3.32% of 0.30 seconds
+granularity: each sample hit covers 2 byte(s) for 14.25% of 0.07 seconds
 
 index % time    self  children    called     name
-                0.30    0.00   12168/12168       triRapide [2]
-[1]    100.0    0.30    0.00   12168         partition [1]
------------------------------------------------
-                               24336             triRapide [2]
-                0.00    0.30       1/1           main [3]
-[2]    100.0    0.00    0.30       1+24336   triRapide [2]
-                0.30    0.00   12168/12168       partition [1]
-                               24336             triRapide [2]
------------------------------------------------
                                                  <spontaneous>
-[3]    100.0    0.00    0.30                 main [3]
-                0.00    0.30       1/1           triRapide [2]
-                0.00    0.00       1/1           generer_tableau_valeur_unique [4]
+[1]    100.0    0.00    0.07                 main [1]
+                0.00    0.06       1/1           TriFusion [3]
+                0.01    0.00       1/1           generer_tableau_trie_decroissant [4]
 -----------------------------------------------
-                0.00    0.00       1/1           main [3]
-[4]      0.0    0.00    0.00       1         generer_tableau_valeur_unique [4]
+                0.06    0.00  461219/461219      TriFusion [3]
+[2]     85.7    0.06    0.00  461219         fusion [2]
+-----------------------------------------------
+                              922438             TriFusion [3]
+                0.00    0.06       1/1           main [1]
+[3]     85.7    0.00    0.06       1+922438  TriFusion [3]
+                0.06    0.00  461219/461219      fusion [2]
+                              922438             TriFusion [3]
+-----------------------------------------------
+                0.01    0.00       1/1           main [1]
+[4]     14.3    0.01    0.00       1         generer_tableau_trie_decroissant [4]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -154,4 +154,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [4] generer_tableau_valeur_unique [1] partition         [2] triRapide
+   [3] TriFusion               [2] fusion                  [4] generer_tableau_trie_decroissant

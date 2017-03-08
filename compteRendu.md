@@ -62,18 +62,14 @@ Observons le comportement des algorithmes sur des tableaux à valeurs décroissa
  
 ## Complexité dans le meilleur des cas - Tri Insertion
 Lorsque le tableau est déjà triée, on obtient en sortie :
-```c
-
-```
+![exectime](./Graphs/insertion/insertTousTableaux.png)
 
 ## Complexité dans le pire des cas - Tri Insertion
 Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-```c
-
-```
+![exectime](./Graphs/insertion/insertTousTableaux.png)
 
 ## Complexité moyenne - Tri Insertion
-
+![exectime](./Graphs/insertion/insertTousTableaux.png)
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du 
 tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
@@ -82,39 +78,30 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 
 ## Complexité dans le meilleur des cas - Tri Fusion
 Lorsque le tableau est déjà triée, on obtient en sortie :
-```c
-
-```
+![exectime](./Graphs/fusion/fusionTousTableaux.png)
 
 ## Complexité dans le pire des cas - Tri Fusion
 Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-```c
-
-```
+![exectime](./Graphs/fusion/fusionTousTableaux.png)
 
 
 
 ## Complexité moyenne - Tri Fusion
 Lorsque le tableau est déjà triée, on obtient en sortie :
-```c
-
-```
+![exectime](./Graphs/fusion/fusionTousTableaux.png)
 
 
 ## Complexité dans le meilleur des cas - Tri Rapide
-```c
+![exectime](./Graphs/rapide/rapideTousTableaux.png)
 
-```
 
 ## Complexité dans le pire des cas - Tri Rapide
 Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-```c
+![exectime](./Graphs/rapide/rapideTousTableaux.png)
 
-```
 ## Complexité moyenne - Tri Rapide
-```c
+![exectime](./Graphs/rapide/rapideTousTableaux.png)
 
-```
 
 Utilisation : `./a.exe -n fonction`
 

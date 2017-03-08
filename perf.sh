@@ -1,17 +1,18 @@
 #! /bin/bash
 
-NB_TEST=100
+NB_TEST=500
 
-FUNS="triRapide"
+FUNS="TriFusion"
 
-EXES="rap"
+EXES="fusDec fusCroi fusAlea"
 
 echo -e "test\ttaille\texe\texectime\tmemory\tmmm"
 
 
 for test in `seq $NB_TEST`
 do
-	param=$((($RANDOM)%100000))
+	param=$((($RANDOM*20)))
+	#param=350000
 
 	PIDS=""
 
