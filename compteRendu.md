@@ -53,7 +53,7 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi a a
 On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau. 
 
 
-Observons le comportement des algos sur des tableaux à valeurs décroissantes.
+Observons le comportement des algorithmes sur des tableaux à valeurs décroissantes.
 ![exectime](./Graphs/3tri/decroissant3tri.png)
 
 
@@ -61,24 +61,61 @@ Observons le comportement des algos sur des tableaux à valeurs décroissantes.
 
  
 ## Complexité dans le meilleur des cas - Tri Insertion
+Lorsque le tableau est déjà triée, on obtient en sortie :
+```c
+
+```
 
 ## Complexité dans le pire des cas - Tri Insertion
+Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
+```c
+
+```
 
 ## Complexité moyenne - Tri Insertion
 
 
+Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du 
+tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
+L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation, 
+cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
+
 ## Complexité dans le meilleur des cas - Tri Fusion
+Lorsque le tableau est déjà triée, on obtient en sortie :
+```c
+
+```
 
 ## Complexité dans le pire des cas - Tri Fusion
+Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
+```c
+
+```
+
+## Conclusion Final
+
+Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation, 
+la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se 
+précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
+ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
+Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le
+terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
 
 ## Complexité moyenne - Tri Fusion
+Lorsque le tableau est déjà triée, on obtient en sortie :
+```c
+
+```
 
 
 ## Complexité dans le meilleur des cas - Tri Rapide
 
 ## Complexité dans le pire des cas - Tri Rapide
+Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
+```c
 
+```
 ## Complexité moyenne - Tri Rapide
 
-
+Utilisation : `./a.exe -n fonction`
 
