@@ -129,9 +129,10 @@ int main(int argc, char *argv[] )
   {
     printf("%s\n","Usage <nbr elements tableau>");
   }else{
+
     srand(time(NULL));
     N = atoll(argv[1]);
-    long *tab = generer_tableau_trie_croissant(N);
+    long *tab = generer_tableau_valeur_unique(N);
     //printf("non triée \n");
     //afficher_tableau(tab);
     //insert(tab);

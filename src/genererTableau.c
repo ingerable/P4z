@@ -39,6 +39,18 @@ long *generer_tableau_trie_decroissant(long long unsigned int n)
   return tableau;
 }
 
+long *generer_tableau_valeur_unique(long long unsigned int n)
+{
+	long *tableau = malloc(n*sizeof(long));
+	long value = rand()%n;
+	long long unsigned i;
+	for (i=0; i<n; i++)
+	{
+		tableau[i] = value;
+	}
+	return tableau;
+}
+
 char testCroissance(long* tab, int N)
 {
 	char res = 0;

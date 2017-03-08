@@ -2,7 +2,7 @@
 
 ## Application
 
-Nous testons 3 algorithmes de trie différent : 
+Nous testons 3 algorithmes de trie différents : 
 
 * TriFusion
 * Tri par insertion
@@ -15,8 +15,8 @@ Laptot Asus Intel Core i7-5500U CPU @ 2.40Ghz x 4
 
 ## Méthode de test
 
-Nous utilisons un script qui permet d'automatiser les tests. e script produit
-une fichier de données variant selon les paramètres données au script.
+Nous utilisons un script qui permet d'automatiser les tests. Le script produit
+un fichier de données variant selon les paramètres données au script.
 Les paramètres étant les fonctions voulant êtres testées, le nombre de test 
 et le ou les executables voulant être executés. La taille du tableau est generée 
 de manière aléatoire dans le script.
@@ -30,10 +30,32 @@ Pour commencer nous avons tester le temps d'execution des 3 tri sur un tableau d
 de taille variable.
 
 ![exectime](./Graphs/3tri/Exectime.png)
-![exectime](./Graphs/3tri/insertionFusionRapideMemoryCourbes.png)
 
 On remarque que le temps d'éxecution du tri par insertion augmente proportionnellement 
 à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible
 .
+
+![memory](./Graphs/3tri/insertionFusionRapideMemoryCourbes.png)
+
+ Néanmoins on peut voir que le tri fusion est celui qui utilise le plus de mémoire probablement à cause de la génération des sous tableaux puis de leurs fusions.
+
+
+![exectime](./Graphs/3tri/Exectime3croissant.png)
+
+Cette fois ci on test le temps d'éxecution pour des tableaux qui ont des valeurs triées par ordre croissant.
+On constate que le temps d'éxecution du tri rapide augmente proportionellement pour des tableaux triées par ordre croissant. Le tri rapide n'est donc pas efficace pour des tableaux triés par odre croissant.
+
+
+Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi à augmenté pour le tri rapide.
+
+![exectime](./Graphs/3tri/Memory3Croissant.png)
+
+On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.
+ 
+
+
+
+
+
 
 

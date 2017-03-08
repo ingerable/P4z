@@ -5,9 +5,9 @@ Each sample counts as 0.01 seconds.
 
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00     9139     0.00     0.00  fusion
+  0.00      0.00     0.00    19388     0.00     0.00  fusion
   0.00      0.00     0.00        1     0.00     0.00  TriFusion
-  0.00      0.00     0.00        1     0.00     0.00  generer_tableau_trie_croissant
+  0.00      0.00     0.00        1     0.00     0.00  generer_tableau_valeur_unique
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -48,17 +48,17 @@ notice and this notice are preserved.
 granularity: each sample hit covers 2 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00    9139/9139        TriFusion [2]
-[1]      0.0    0.00    0.00    9139         fusion [1]
+                0.00    0.00   19388/19388       TriFusion [2]
+[1]      0.0    0.00    0.00   19388         fusion [1]
 -----------------------------------------------
-                               18278             TriFusion [2]
-                0.00    0.00       1/1           main [13]
-[2]      0.0    0.00    0.00       1+18278   TriFusion [2]
-                0.00    0.00    9139/9139        fusion [1]
-                               18278             TriFusion [2]
+                               38776             TriFusion [2]
+                0.00    0.00       1/1           main [14]
+[2]      0.0    0.00    0.00       1+38776   TriFusion [2]
+                0.00    0.00   19388/19388       fusion [1]
+                               38776             TriFusion [2]
 -----------------------------------------------
-                0.00    0.00       1/1           main [13]
-[3]      0.0    0.00    0.00       1         generer_tableau_trie_croissant [3]
+                0.00    0.00       1/1           main [14]
+[3]      0.0    0.00    0.00       1         generer_tableau_valeur_unique [3]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -151,4 +151,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [2] TriFusion               [1] fusion                  [3] generer_tableau_trie_croissant
+   [2] TriFusion               [1] fusion                  [3] generer_tableau_valeur_unique
