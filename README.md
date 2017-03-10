@@ -1,16 +1,16 @@
-### Compte rendu P4z 
+### Compte rendu P4z
 
 ## Application
 
-Nous testons 3 algorithmes de tri différents : 
+Nous testons 3 algorithmes de tri différents :
 
-* TriFusion
-* Tri par insertion
+* Tri insertion
+* Tri Fusion
 * Tri rapide
 
 ## Environnement de test
 
-Laptot Asus Intel Core i7-5500U CPU @ 2.40Ghz x 4
+Laptop Asus Intel Core i7-5500U CPU @ `2.40Ghz` x 4
 
 
 ## Méthode de test
@@ -18,13 +18,38 @@ Laptot Asus Intel Core i7-5500U CPU @ 2.40Ghz x 4
 Nous utilisons un script qui permet d'automatiser les tests. Le script produit
 un fichier de données variant selon les paramètres données au script.
 Les paramètres étant les fonctions voulant êtres testées, le nombre de tests
-et le ou les executables voulant être executés. La taille du tableau est generée 
+et le ou les executables voulant être executés. La taille du tableau est generée
 de manière aléatoire dans le script.
 
 ## Préliminaires
-La complexité est un champs d'études vaste et passionnant. Il peut-être étudié en philosophie, en biologie, en mathématiques, et bien-sûr en informatique. Elle confère des propriétés intéressantes, et indispensable à tous programmeur soucieux de créer des programmes optimisés, efficaces et rapide. Dans cet article, nous offrons au lecteur une introduction à la complexité d'un point de vu mathématiques théorique pour surfer sur un point de vu informatique pratique. Le plan en découle tout naturellement :
-- Notation Big O et petit aparté mathématiques.
 
+La complexité est un champs d'études vaste et passionnant. Il peut-être étudié en philosophie, en biologie, en mathématiques, et bien-sûr en informatique. Elle confère des propriétés intéressantes, et surtout indispensables à tout programmeur soucieux de créer des programmes optimisés, efficaces et rapides. Dans cet article, nous offrons au lecteur un prélude à la complexité d'un point de vu mathématiques théorique. Puis, dans un second temps, nous nous concentrerons
+sur la partie informatique pratique. Le plan en découle intrasèquement :
+
+- Introduction
+- Notation Big O et petit aparté mathématiques
+- Temps d'exécution d'un programme
+- Temps d'exécution d'une instruction et assembleur
+- Notion de complexité
+- Complexité en fonction de plusieurs variables
+- Conclusion et ouverture vers d'autres possibilités
+
+Il est usuel d'écrire des programmes sans étudier en amont et en omettant (souvent) volontairement certains paramètres pourtant essentiels à son fonctionnement :
+
+- Le type et la fréquence du microprocesseur utilisé,
+- Le langage utilisé et le compilateur choisi, ainsi que de ses réglages,
+- Les données d'entrée,
+- La complexité en temps de l'algorithme
+
+Nous voilà maintenant fin prêt. C'est parti !
+
+## Introduction
+
+Un algorithme est une série d'opérations qui permet de fournir une solution à une problématique préalablement donnée.
+Il est parfois fastidieux de trouver une solution. Mais il peut-être encore plus fastidieux de dénicher un algorithme qui fournit une solution rapidement.
+Sur différent sites de challenge de programation, une limite de temps est imposée : la durée maximale autorisée d'exécution de votre programme. Si votre code ne satisfait pas une réponse dans cette limite pour un test donné, ce test est considéré comme étant un échec, même si avec plus de temps, votre programme aurait pu satisfaire une réponse juste. Toute la difficulté est donc de faire en sorte que votre programme soit suffisamment vif.
+
+gcc -s
 
 ## Résultats et analyses
 
@@ -33,7 +58,7 @@ de taille variable.
 
 ![exectime](./Graphs/3tri/Exectime.png)
 
-On remarque que le temps d'exécution du tri par insertion augmente proportionnellement 
+On remarque que le temps d'exécution du tri par insertion augmente proportionnellement
 à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible.
 
 ![memory](./Graphs/3tri/insertionFusionRapideMemoryCourbes.png)
@@ -52,14 +77,14 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi a a
 
 ![exectime](./Graphs/3tri/Memory3Croissant.png)
 
-On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau. 
+On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau.
 
 
 
 
 
 
- 
+
 ## Complexité dans le meilleur des cas - Tri Insertion
 Lorsque le tableau est déjà triée, on obtient en sortie :
 ![exectime](./Graphs/insertion/insertTousTableaux.png)
@@ -71,9 +96,9 @@ Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalableme
 ## Complexité moyenne - Tri Insertion
 ![exectime](./Graphs/insertion/insertTousTableaux.png)
 
-Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du 
+Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
 tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
-L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation, 
+L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation,
 cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
 
 ## Complexité dans le meilleur des cas - Tri Fusion
@@ -105,7 +130,7 @@ Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalableme
 
 Utilisation : `./a.exe -n fonction`
 
-## Ajouts possibles 
+## Ajouts possibles
 
 Pour faciliter l'automatisation et la rapidité des tests nous aurions pu mettre en place un système d'arguments en ligne de commande pour selectionner le tri et le tableau voulant être testé. Nous n'avons pas eu le temps de comparer les différentes comparaisons et écritures. Tester d'autres algorithmes peut être interéssant (tri à bulles...). Nous avons mis en place 3 type de tableaux mais il aurait été possible de trouver d'autres types de tableaux plus particuliers.
 
@@ -126,8 +151,8 @@ Conclusion
 
 ## Conclusion Finale
 
-Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation, 
-la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se 
+Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation,
+la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se
 précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
 ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
 Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le
