@@ -49,7 +49,15 @@ Un algorithme est une série d'opérations qui permet de fournir une solution à
 Il est parfois fastidieux de trouver une solution. Mais il peut-être encore plus fastidieux de dénicher un algorithme qui fournit une solution rapidement.
 Sur différent sites de challenge de programation, une limite de temps est imposée : la durée maximale autorisée d'exécution de votre programme. Si votre code ne satisfait pas une réponse dans cette limite pour un test donné, ce test est considéré comme étant un échec, même si avec plus de temps, votre programme aurait pu satisfaire une réponse juste. Toute la difficulté est donc de faire en sorte que votre programme soit suffisamment vif.
 
+L'objectif de cet article sera d'estimer grossièrement la célérité d'un algorithme avant même de le lancer. Il s'agit du calcul de la complexité en temps d'un algorithme.
+Nous travaillerons avec le langage C et le compilateur gcc.
+
 gcc -s
+Complexité dans le meilleur des cas
+Complexité dans le pire des cas
+Complexité dans un tableau dont les éléments ont été généré aléatoirement
+Complexité sur de petits tableaux
+Complexité sur un tableau partiellement trié
 
 ## Résultats et analyses
 
