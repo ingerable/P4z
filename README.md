@@ -21,7 +21,9 @@ Les paramètres étant les fonctions voulant êtres testées, le nombre de tests
 et le ou les executables voulant être executés. La taille du tableau est generée 
 de manière aléatoire dans le script.
 
-
+## Préliminaires
+La complexité est un champs d'études vaste et passionnant. Il peut-être étudié en philosophie, en biologie, en mathématiques, et bien-sûr en informatique. Elle confère des propriétés intéressantes, et indispensable à tous programmeur soucieux de créer des programmes optimisés, efficaces et rapide. Dans cet article, nous offrons au lecteur une introduction à la complexité d'un point de vu mathématiques théorique pour surfer sur un point de vu informatique pratique. Le plan en découle tout naturellement :
+- Notation Big O et petit aparté mathématiques.
 
 
 ## Résultats et analyses
