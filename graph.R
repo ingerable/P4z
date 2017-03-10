@@ -1,10 +1,11 @@
 library(ggplot2)
 
-perf <-read.table("rap3.dat", header=TRUE, fill=TRUE)
+perf <-read.table("test.dat", header=TRUE, fill=TRUE)
+fusion <-perf[perf$tri=='insertion',]
 
 
-png("rapideTousTableaux.png")
-i<-qplot(taille, memory, data=perf, main="Tri rapide tableaux croissants decroissants aléatoire non triés utilisation mémoire" ,geom="smooth", method="loess", color=exe)
+png("insertionProcheEtendue.png")
+i<-qplot(taille, exectime, data=perf, main="insertion sur tableaux croissants proche et etendue" ,geom="smooth", method="loess", color=tableau)
 print(i)
 dev.off()
 

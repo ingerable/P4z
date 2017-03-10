@@ -36,10 +36,32 @@ long *generer_tableau_trie_decroissant(long long unsigned int n){
 	for (i=n-1; i>0; i--)
 	{
 		tableau[_] = i;
-		printf("%lld\n",_);
+		//printf("%lld\n",_);
 		_++;
 	}
   return tableau;
+}
+
+long *generer_tableau_trie_aleatoire_proche(long long unsigned int n)
+{
+	long *tableau = malloc(n*sizeof(long));
+	long long unsigned int i;
+	for (i=0; i<n; i++)
+	{
+			tableau[i] = i%2;
+	}
+	return tableau;
+}
+
+long *generer_tableau_trie_aleatoire_etendu(long long unsigned int n)
+{
+	long *tableau = malloc(n*sizeof(long));
+	long long unsigned int i;
+	for (i=0; i<n; i++)
+	{
+		tableau[i] = (i%2)*2000000;
+	}
+	return tableau;
 }
 
 long *generer_tableau_valeur_unique(long long unsigned int n)
@@ -54,7 +76,7 @@ long *generer_tableau_valeur_unique(long long unsigned int n)
 	return tableau;
 }
 
-char testCroissance(long* tab, int N)
+/*char testCroissance(long* tab, int N)
 {
 	char res = 0;
 	for(int i=0; i<N;i++)
@@ -69,4 +91,4 @@ char testCroissance(long* tab, int N)
 		}
 	}
 	return res;
-}
+}*/
