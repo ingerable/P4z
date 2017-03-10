@@ -10,7 +10,7 @@ Nous testons 3 algorithmes de tri différents :
 
 ## Environnement de test
 
-Laptot Asus Intel Core i7-5500U CPU @ 2.40Ghz x 4
+Laptop Asus Intel Core i7-5500U CPU @ `2.40Ghz` x 4
 
 
 ## Méthode de test
@@ -22,6 +22,7 @@ et le ou les executables voulant être executés. La taille du tableau est gener
 de manière aléatoire dans le script.
 
 ## Préliminaires
+
 La complexité est un champs d'études vaste et passionnant. Il peut-être étudié en philosophie, en biologie, en mathématiques, et bien-sûr en informatique. Elle confère des propriétés intéressantes, et surtout indispensables à tout programmeur soucieux de créer des programmes optimisés, efficaces et rapides. Dans cet article, nous offrons au lecteur un prélude à la complexité d'un point de vu mathématiques théorique. Puis, dans un second temps, nous nous concentrerons
 sur la partie informatique pratique. Le plan en découle intrasèquement :
 
@@ -42,7 +43,13 @@ Il est usuel d'écrire des programmes sans étudier en amont et en omettant (sou
 
 Nous voilà maintenant fin prêt. C'est parti !
 
+## Introduction
 
+Un algorithme est une série d'opérations qui permet de fournir une solution à une problématique préalablement donnée.
+Il est parfois fastidieux de trouver une solution. Mais il peut-être encore plus fastidieux de dénicher un algorithme qui fournit une solution rapidement.
+Sur différent sites de challenge de programation, une limite de temps est imposée : la durée maximale autorisée d'exécution de votre programme. Si votre code ne satisfait pas une réponse dans cette limite pour un test donné, ce test est considéré comme étant un échec, même si avec plus de temps, votre programme aurait pu satisfaire une réponse juste. Toute la difficulté est donc de faire en sorte que votre programme soit suffisamment vif.
+
+gcc -s
 
 ## Résultats et analyses
 
