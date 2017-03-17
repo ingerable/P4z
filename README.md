@@ -49,6 +49,17 @@ Un algorithme est une série d'opérations qui permet de fournir une solution à
 Il est parfois fastidieux de trouver une solution. Mais il peut-être encore plus fastidieux de dénicher un algorithme qui fournit une solution rapidement.
 Sur différent sites de challenge de programation, une limite de temps est imposée : la durée maximale autorisée d'exécution de votre programme. Si votre code ne satisfait pas une réponse dans cette limite pour un test donné, ce test est considéré comme étant un échec, même si avec plus de temps, votre programme aurait pu satisfaire une réponse juste. Toute la difficulté est donc de faire en sorte que votre programme soit suffisamment vif.
 
+
+L'objectif de cet article sera d'estimer grossièrement la célérité d'un algorithme avant même de le lancer. Il s'agit du calcul de la complexité en temps d'un algorithme.
+Nous travaillerons avec le langage C et le compilateur gcc.
+
+gcc -s
+Complexité dans le meilleur des cas
+Complexité dans le pire des cas
+Complexité dans un tableau dont les éléments ont été généré aléatoirement
+Complexité sur de petits tableaux
+Complexité sur un tableau partiellement trié
+=======
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -78,7 +89,70 @@ sys  0m0.666s
 
 Celui qui nous intéresse dépend des besoin et du contexte. Souvent on ne porte attention que sur le temps "user" ou le total du temps "user" et "sys".
 
-## [Unix] Vérifier la mémoire utilisée
+## [Unix] Vérification de la mémoire utilisée
+
+Linux, encore une fois propose une commande bien utile. Il s'agit de la commande base "ulimit" qui permet de fixer une limite pour certaines ressources. Ces limites seront appliquées à tout programme lancé à partir de ce shell.
+
+Pour fixer une limite globale à l'utilisation de la mémoire :
+
+- `ulimit -v taille_memoire`
+
+où taille_memoire est une valeur en kilo-octets. Par exemple pour limiter à 16 Mo :
+
+- `ulimit -v 16000`
+
+Une erreur sera affichée si la mémoire du programme est insuffisante. On peut en effet se retrouver face à une erreur d'allocation, ou de segmentation.
+Une autre option de ulimit `-s` consiste à fixer une limite pour la taille de la pile. Très utile lorsque le champs d'application du programme se concentre sur la récursivité.
+
+- `ulimit -s taille_pile`
+
+où taille_pile est en kilo-octets.
+Enfin, l'option `-a` nous permet d'afficher toutes les limites qu'il est possible de fixer.
+
+## Utilisation de 'diff' pour comparer des résultats
+
+Encore une commande Linux qui nous sera très utile, il s'agit de `diff` :
+En effet, le potentiel de `diff` se révelera lorsque l'on voudra comparer les résultats de deux algorithmes différents.
+La commande ci-dessous affichera toutes les différences trouvées entre le fichier1 et le fichier2 :
+
+- diff fichier1 fichier2
+L'option `-q` de diff permet de cacher les différences, et nous indique seulement par un booléen si deux fichiers sont différents :
+
+- diff -q fichier1 fichier2
+
+L'option `-w` nous permet d'ignorer les différents qui sont des caractères d'espacement comme ' ', '\t', '\n' :
+
+- diff -w fichier1 fichier2
+
+On peut alors tester si les résultats générés par un programme correspondent bien aux résultats attendus. La commande suivante en découle tout naturellement :
+
+- diff -q -w sortie_attendue votre_sortie
+
+
+## Etude de cas
+
+### Problématique : La distance entre deux éléments adjacent interfère t-elle dans le temps d'exécution du tri ?
+
+Nous avons un tableaux contenant des éléments de type long long unsigned int. La distance entre chaque élement adjacent est petite. Par exemple, nous avons : [0,1,0,1,0,1]. Nous avons maintenant un autre tableau, de même taille et la distance entre chaque élément est significative : [1, 1000000000, 1, 1000000000, 1, 1000000000].
+La dernière étape est de trier ces deux tableaux avec le tri par insertion, le tri fusion ou le tri rapide au choix.
+
+Est-il possible que le temps d'éxecution soit plus important pour le second tableau ?
+
+### Eléments de réponse
+
+Les algorithmes de tris tels que le tri par insertion, le tri rapide et le tri fusion sont appelés tris de comparaisons car ils trient les éléments sur leur ordre relatif par rapport aux autres éléments. Pas sur leur valeurs absolues. Du point de vu du tri rapide, tri fusion, ou du tri insertion les tableaux suivant sont parfaitement identiques :
+
+[0, 1, 0, 1, 0] et [0, 1000000, 0, 1000000, 0].
+
+En effet, il n'y a aucun moyen de savoir que 1000000 "est plus grand" que 1. Le nombre total d'opérations effectuées pour trier ces tableaux seront parfaitement identiques d'un tableau à l'autre. En fait, si l'on trie chacun de ces tableaux avec ces algorithmes de tri.
+En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde les éléments se déplacer, on observera que les mouvements exécutés sont les mêmes.
+
+Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes.
+
+S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
+
+Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite. Ce dernier pourrait prendre plus de temps pour trier ces tableaux car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
+
 
 ## Résultats et analyses
 
