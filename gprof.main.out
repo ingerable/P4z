@@ -3,9 +3,9 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
-100.26      0.05     0.05   461219     0.00     0.00  fusion
-  0.00      0.05     0.00        1     0.00    50.13  TriFusion
-  0.00      0.05     0.00        1     0.00     0.00  generer_tableau_trie_croissant
+100.25      0.02     0.02   160679     0.00     0.00  fusion
+  0.00      0.02     0.00        1     0.00    20.05  TriFusion
+  0.00      0.02     0.00        1     0.00     0.00  generer_tableau_trie_decroissant
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -43,25 +43,25 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 19.95% of 0.05 seconds
+granularity: each sample hit covers 2 byte(s) for 49.87% of 0.02 seconds
 
 index % time    self  children    called     name
-                0.05    0.00  461219/461219      TriFusion [2]
-[1]    100.0    0.05    0.00  461219         fusion [1]
+                0.02    0.00  160679/160679      TriFusion [2]
+[1]    100.0    0.02    0.00  160679         fusion [1]
 -----------------------------------------------
-                              922438             TriFusion [2]
-                0.00    0.05       1/1           main [3]
-[2]    100.0    0.00    0.05       1+922438  TriFusion [2]
-                0.05    0.00  461219/461219      fusion [1]
-                              922438             TriFusion [2]
+                              321358             TriFusion [2]
+                0.00    0.02       1/1           main [3]
+[2]    100.0    0.00    0.02       1+321358  TriFusion [2]
+                0.02    0.00  160679/160679      fusion [1]
+                              321358             TriFusion [2]
 -----------------------------------------------
                                                  <spontaneous>
-[3]    100.0    0.00    0.05                 main [3]
-                0.00    0.05       1/1           TriFusion [2]
-                0.00    0.00       1/1           generer_tableau_trie_croissant [4]
+[3]    100.0    0.00    0.02                 main [3]
+                0.00    0.02       1/1           TriFusion [2]
+                0.00    0.00       1/1           generer_tableau_trie_decroissant [4]
 -----------------------------------------------
                 0.00    0.00       1/1           main [3]
-[4]      0.0    0.00    0.00       1         generer_tableau_trie_croissant [4]
+[4]      0.0    0.00    0.00       1         generer_tableau_trie_decroissant [4]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -154,4 +154,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [2] TriFusion               [1] fusion                  [4] generer_tableau_trie_croissant
+   [2] TriFusion               [1] fusion                  [4] generer_tableau_trie_decroissant

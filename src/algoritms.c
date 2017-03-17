@@ -125,24 +125,51 @@ void afficher_tableau(long *tableau)
 
 int main(int argc, char *argv[] )
 {
-  if(argc !=2)
+  if(argc !=4)
   {
-    printf("%s\n","Usage <nbr elements tableau>");
+    printf("%s\n","Usage <nbr elements tableau> <type tri> <type tableaux>");
   }else{
 
     srand(time(NULL));
     N = atoll(argv[1]);
-    long *tab = generer_tableau_trie_decroissant(N);
-    //printf("non triée \n");
+    long *tab; //type de tableaux
+
+
+    if(strcmp(argv[3],"croissant")==0)
+    {
+      tab = generer_tableau_trie_croissant(N);
+    }else if(strcmp(argv[3],"decroissant")==0)
+    {
+      tab = generer_tableau_trie_decroissant(N);
+    }else if(strcmp(argv[3],"unique")==0)
+    {
+      tab = generer_tableau_valeur_unique(N);
+    }else if(strcmp(argv[3],"aleatoire")==0)
+    {
+      tab = generer_tableau(N);
+    }else if(strcmp(argv[3],"aleatoireProche")==0)
+    {
+      tab = generer_tableau_trie_aleatoire_proche(N);
+    }else if(strcmp(argv[3],"aleatoireEtendue")==0)
+    {
+      tab = generer_tableau_trie_aleatoire_etendu(N);
+    }
     //afficher_tableau(tab);
-    //insert(tab);
-  	TriFusion(tab, 0, N-1);
-    //triRapide(tab,0,N-1);
-    //printf("\n");
-    //printf("triée :\n");
-    //afficher_tableau(tab);
-  	//printf("\n");
-    //printf("%d\n",testCroissance(tab,N));
+
+    if(strcmp(argv[2],"insertion")==0)
+    {
+      insert(tab);
+    }
+    else if(strcmp(argv[2],"fusion")==0)
+    {
+      TriFusion(tab, 0, N-1);
+    }
+    else if(strcmp(argv[2],"rapide")==0)
+    {
+      triRapide(tab,0,N-1);
+    }
+
+
   }
 	return 0;
 }

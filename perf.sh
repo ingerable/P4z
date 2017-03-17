@@ -2,39 +2,40 @@
 
 NB_TEST=500
 
-FUNS="TriFusion"
+ARGSTRI="insertion"
 
-EXES="fusDec fusCroi fusAlea"
+ARGSTAB="aleatoireProche aleatoireEtendue"
 
-echo -e "test\ttaille\texe\texectime\tmemory\tmmm"
+echo -e "test\ttaille\ttri\ttableau\texectime\tmemory"
+
+exe="main"
 
 
 for test in `seq $NB_TEST`
 do
-	param=$((($RANDOM*20)))
-	#param=350000
+	taille=$((($RANDOM)))
 
-	PIDS=""
-
-	for exe in $EXES
+	for tri in $ARGSTRI
 	do
-		(
-			RES="$test\t$param\t$exe\t"
-			RES="$RES`(/usr/bin/time -f "%U\t%M" ./$exe $param > /dev/null) 2>&1`"
-
-			gprof $exe > ./gprof.$exe.out
-			for fun in $FUNS
+		
+			for tab in $ARGSTAB
 			do
-				RES="$RES\t`cat ./gprof.$exe.out | grep $fun | awk '{print $4}' | head -1`"
-			done
+				(
+				RES="$test\t$taille\t$tri\t$tab\t"
+				RES="$RES`(/usr/bin/time -f "%U\t%M" ./$exe $taille $tri $tab> /dev/null) 2>&1`"
 
-			echo -e $RES
+				echo -e $RES
+				)  &
+				while [ `ps -A | grep -c main` -ge 3 ]
+				do 
+					sleep 1
+				done
+			done 
 
-		)  &
-		PIDS="$PIDS $!"
+
 	done
 
-	wait $PIDS
+	
 
 done
 

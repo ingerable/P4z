@@ -49,6 +49,7 @@ Un algorithme est une série d'opérations qui permet de fournir une solution à
 Il est parfois fastidieux de trouver une solution. Mais il peut-être encore plus fastidieux de dénicher un algorithme qui fournit une solution rapidement.
 Sur différent sites de challenge de programation, une limite de temps est imposée : la durée maximale autorisée d'exécution de votre programme. Si votre code ne satisfait pas une réponse dans cette limite pour un test donné, ce test est considéré comme étant un échec, même si avec plus de temps, votre programme aurait pu satisfaire une réponse juste. Toute la difficulté est donc de faire en sorte que votre programme soit suffisamment vif.
 
+
 L'objectif de cet article sera d'estimer grossièrement la célérité d'un algorithme avant même de le lancer. Il s'agit du calcul de la complexité en temps d'un algorithme.
 Nous travaillerons avec le langage C et le compilateur gcc.
 
@@ -58,6 +59,83 @@ Complexité dans le pire des cas
 Complexité dans un tableau dont les éléments ont été généré aléatoirement
 Complexité sur de petits tableaux
 Complexité sur un tableau partiellement trié
+=======
+## Ligne de commande de compilation C/C++
+
+`g++ -Wall -O2 -o output.exe tri.cpp`
+
+Nous allons ici donner quelques conseils ou « tricks » propres au langage C ou C++ et leur compilateur associé gcc. Ce sont de bonnes pratiques à privilégier lorsque l'on travaille dans un environnement nécessitant rigueur et performance.
+L'option `-Wall` du compilateur gcc active un maximum de warnings, ce qui permet de minorer le nombre de bugs potentiels. Il est plus que fortement déconseillé de travailler avec un code qui produit des warnings.
+L'option `-O2` (c'est un 'O' et non un '0') permet un temps de compilation plus efficace ainsi qu'une génération de code plus performant. On peut gagner un facteur 2 ou 3 en vitesse dans certain cas.
+
+## Mesurer le temps d'exécution
+
+Sous environnement Linux, pour jauger le temps d'exécution d'un programme on utilisera la commande `time` suivante :
+**time monprogramme.out**
+
+Cette commande affichera les trois lignes suivantes :
+
+```shell
+real 0m0.572s
+user 0m0.404s
+sys  0m0.666s
+```
+
+- Le temps `real` correspond au temps qui s'est consumé, depuis le début et la fin de l'exécution d'un programme. Il est assujeti à de nombreux facteurs externes tels que par exemple les programmes extrinsèques exécutés au même moment par la machine.
+
+- Le temps `user` cadre avec le temps que le processeur a passé à exécuter les instructions d'un programme, sans compter les appels systèmes tels que malloc, printf, scanf etc.
+
+- Le temps `sys` cadre avec le temps que le processeur a passé à exécuter les appels systèmes, autrement dit il s'agit du temps utilisé par des fonctions systèmes comme malloc, printf ou scanf.
+
+Celui qui nous intéresse dépend des besoin et du contexte. Souvent on ne porte attention que sur le temps "user" ou le total du temps "user" et "sys".
+
+## [Unix] Vérifier la mémoire utilisée
+
+
+our vérifier que votre programme n'utilise pas trop de mémoire, sous linux, vous pouvez utiliser la commande bash "ulimit", qui permet de fixer une limite pour certaines ressources. Ces limites seront appliquées à tout programme lancé à partir de ce shell.
+
+Attention : une fois que vous avez fixé une limite, vous ne pouvez pas la réaugmenter sans quitter le shell. Lancer donc un nouveau shell temporairement (commande sh) pour faire votre test.
+
+>Pour fixer une limite globale à l'utilisation de la mémoire :
+
+   ulimit -v taille_memoire
+
+où taille_memoire est une valeur en kilo-octets. Par exemple pour limiter à 16 Mo :
+
+   ulimit -v 16000
+
+Si vous exécutez ensuite votre programme dans ce shell, une erreur sera affichée si la mémoire est insuffisante. Il peut s'agir d'un simple message "Killed", ou d'une erreur d'allocation, ou de segmentation. Si vous utilisez des mallocs, vérifiez qu'ils n'ont pas renvoyé un pointeur nul.
+
+Dans certain cas, on peut vous indiquer une limite séparée pour la taille de la pile. Vous pouvez la fixer avec l'option -s :
+
+   ulimit -s taille_pile
+
+où taille_pile est en kilo-octets.
+
+A tout moment, vous pouvez afficher les limites actuelles du shell en appelant "ulimit -v" ou "ulimit -s" sans indiquer la taille. Pour plus de détails, utilisez la commande "ulimit -a" qui permet d'afficher toutes les limites qu'il est possible de fixer.
+
+## Etude de cas
+
+### Problématique : La distance entre deux éléments adjacent interfère t-elle dans le temps d'exécution du tri ?
+
+Nous avons un tableaux contenant des éléments de type long long unsigned int. La distance entre chaque élement adjacent est petite. Par exemple, nous avons : [0,1,0,1,0,1]. Nous avons maintenant un autre tableau, de même taille et la distance entre chaque élément est significative : [1, 1000000000, 1, 1000000000, 1, 1000000000].
+La dernière étape est de trier ces deux tableaux avec le tri par insertion, le tri fusion ou le tri rapide au choix. Est-il possible que le temps d'éxecution soit plus important pour le second tableau ?
+
+### Eléments de réponse
+
+Les algorithmes de tris tels que le tri par insertion, le tri rapide et le tri fusion sont appelés tris de comparaisons car ils trient les éléments sur leur ordre relatif par rapport aux autres éléments. Pas sur leur valeurs absolues. Du point de vu du tri rapide, tri fusion, ou du tri insertion les tableaux suivant sont parfaitement identiques :
+
+[0, 1, 0, 1, 0] et [0, 1000000, 0, 1000000, 0].
+
+En effet, il n'y a aucun moyen de savoir que 1000000 "est plus grand" que 1. Le nombre total d'opérations effectuées pour trier ces tableaux seront parfaitement identiques d'un tableau à l'autre. En fait, si l'on trie chacun de ces tableaux avec ces algorithmes de tri.
+En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde les éléments se déplacer, on observera que les mouvements exécutés sont les mêmes.
+
+Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes.
+
+S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
+
+Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite. Ce dernier pourrait prendre plus de temps pour trier ces tableaux car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
+
 
 ## Résultats et analyses
 
