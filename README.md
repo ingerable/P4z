@@ -121,12 +121,12 @@ La commande ci-dessous affichera toutes les différences trouvées entre le fich
 L'option `-q` de diff permet de cacher les différences, et nous indique seulement par un booléen si deux fichiers sont différents :
 
 - diff -q fichier1 fichier2
-- 
+
 
 L'option `-w` nous permet d'ignorer les différents qui sont des caractères d'espacement comme ' ', '\t', '\n' :
 
 - diff -w fichier1 fichier2
-- 
+
 
 On peut alors tester si les résultats générés par un programme correspondent bien aux résultats attendus. La commande suivante en découle tout naturellement :
 
