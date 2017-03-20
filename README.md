@@ -188,9 +188,24 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi a a
 
 On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau.
 
+### Option -O2
+
+Comme expliqué precedemment l'option -O permettrait de gagner du temps d'execution/compilation/ ou de réduire l'utilisation de mémoire. On peut voir les différents **flags** d'optimisation :
+
+![flags](./compteRenduImages/optimizationFlag.png)
+
+Nous allons tester le flag -O2 pour voir si nous le temps d'éxecution est réduit et si oui si la réduction du temps d'execution est vraiment notable. Nous avons donc génerer 2 executables l'un avec
+le flag d'optimisation l'autre non. Nous avons choisi de tester le flag sur le tri insertion dans le pire et meilleur des cas, c'est à dire pour un tableau trié croissant et un tableau trié décroissants, résultat :
+
+**Tableau decroissant - pire des cas** | **Tableau croissant - meilleur des cas** |
+|---|---|---|---|---|
+|![exectime](./Graphs/optionOptimisation/insertion/optionOptimisationDecroissant.png) | ![exectime](./Graphs/optionOptimisation/insertion/optionOptimisationInsertionCroissant.png) |
 
 
-##Tri Insertion
+On voit clairement que pour le pire des cas la différence est très importante, on peut aussi noter que la courbe du temps d'éxecution de l'executable optimisé augmente moins vite que l'executable non optimisé.
+Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoins le flag d'optimisation est très efficace et à ne pas négliger. Lorsque l'on utilise un flag d'optimisation il faut avoir un but précis, les flags optimise un aspect spécifique (temps d'éxecution / mémoire). 
+
+## Tri Insertion
 
 **Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
@@ -203,7 +218,7 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
 
 
-##Tri Fusion
+## Tri Fusion
 
 **Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
@@ -211,7 +226,7 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 |**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
 
 
-##Tri Rapide
+## Tri Rapide
 
 **Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
@@ -219,7 +234,6 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
 
-Utilisation : `./a.exe -n fonction`
 
 ## Ajouts possibles
 
