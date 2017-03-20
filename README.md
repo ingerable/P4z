@@ -110,51 +110,33 @@ On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tabl
 
 
 
+##Tri Insertion
 
-
-
-
-## Complexité dans le meilleur des cas - Tri Insertion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/insertion/insertTousTableaux.png)
-
-## Complexité dans le pire des cas - Tri Insertion
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/insertion/insertTousTableaux.png)
-
-## Complexité moyenne - Tri Insertion
-![exectime](./Graphs/insertion/insertTousTableaux.png)
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
+|**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png)  | ![exectime](./Graphs/insertion/insertTousTableaux.png) | ![exectime](./Graphs/insertion/insertTousTableaux.png)
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
 tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
 L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation,
 cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
 
-## Complexité dans le meilleur des cas - Tri Fusion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
 
-## Complexité dans le pire des cas - Tri Fusion
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
+##Tri Fusion
 
-
-
-## Complexité moyenne - Tri Fusion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
+|**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) | ![exectime](./Graphs/fusion/fusionTousTableaux.png) | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
 
 
-## Complexité dans le meilleur des cas - Tri Rapide
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
+##Tri Rapide
 
-
-## Complexité dans le pire des cas - Tri Rapide
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
-
-## Complexité moyenne - Tri Rapide
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
+|**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) | ![exectime](./Graphs/rapide/rapideTousTableaux.png) | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
 
 Utilisation : `./a.exe -n fonction`
