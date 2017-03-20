@@ -192,10 +192,10 @@ On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tabl
 
 ##Tri Insertion
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
-|**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png)  | ![exectime](./Graphs/insertion/insertTousTableaux.png) | ![exectime](./Graphs/insertion/insertTousTableaux.png)
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
 tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
@@ -205,18 +205,18 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 
 ##Tri Fusion
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
-|**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) | ![exectime](./Graphs/fusion/fusionTousTableaux.png) | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
 
 
 ##Tri Rapide
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** | 
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie | 
-|**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) | ![exectime](./Graphs/rapide/rapideTousTableaux.png) | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
 
 Utilisation : `./a.exe -n fonction`
