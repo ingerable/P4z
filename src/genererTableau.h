@@ -10,4 +10,5 @@ long *generer_tableau_trie_decroissant(long long unsigned int n);
 long *generer_tableau_valeur_unique(long long unsigned int n);
 long *generer_tableau_trie_aleatoire_etendu(long long unsigned int n);
 long *generer_tableau_trie_aleatoire_proche(long long unsigned int n);
+long *generer_tableau_trie_partiel(long long unsigned int n);
 char testCroissance(long* tab, int N);

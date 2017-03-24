@@ -76,6 +76,23 @@ long *generer_tableau_valeur_unique(long long unsigned int n)
 	return tableau;
 }
 
+long *generer_tableau_trie_partiel(long long unsigned int n)
+{
+  long *tableau = malloc(n*sizeof(long));
+  long long unsigned int i;
+	long long unsigned int k;
+	tableau[0] = rand()%n;
+  for (i=1; i<n-(n/4); i++)
+  {
+    tableau[i] = (rand()%n)+tableau[i-1];
+  }
+	for (k=n-(n/4); k<n; k++)
+	{
+		tableau[k] = rand()%100000;
+	}
+  return tableau;
+}
+
 /*char testCroissance(long* tab, int N)
 {
 	char res = 0;
