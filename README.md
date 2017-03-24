@@ -59,7 +59,7 @@ Complexité dans le pire des cas
 Complexité dans un tableau dont les éléments ont été généré aléatoirement
 Complexité sur de petits tableaux
 Complexité sur un tableau partiellement trié
-=======
+
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -117,7 +117,6 @@ La commande ci-dessous affichera toutes les différences trouvées entre le fich
 
 - diff fichier1 fichier2
 
-
 L'option `-q` de diff permet de cacher les différences, et nous indique seulement par un booléen si deux fichiers sont différents :
 
 - diff -q fichier1 fichier2
@@ -154,6 +153,7 @@ En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde le
 Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes. En témoigne la figure suivante :
 
 <img src="insertionProcheEtendue.png" alt="procheEtendu" >
+
 
 S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
 
