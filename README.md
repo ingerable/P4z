@@ -59,7 +59,8 @@ Complexité dans le pire des cas
 Complexité dans un tableau dont les éléments ont été généré aléatoirement
 Complexité sur de petits tableaux
 Complexité sur un tableau partiellement trié
-=======
+
+
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -132,6 +133,8 @@ On peut alors tester si les résultats générés par un programme correspondent
 
 - diff -q -w sortie_attendue votre_sortie
 
+D'ailleurs, je soupçonne très fortement qu'une commande similaire ait été utilisée lors des TPs du module de graphes l'an dernier ;-)
+
 
 ## Etude de cas
 
@@ -162,7 +165,7 @@ Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le
 
 ## Résultats et analyses
 
-Pour commencer, nous avons testé le temps d'exécution des 3 tris sur un tableau de valeurs générées aléatoirement et de type "long long unsigned int"
+Pour commencer, nous avons testé le temps d'exécution des 3 tris sur un tableau de valeurs générées aléatoirement et de type `long long unsigned int`
 de taille variable.
 
 ![exectime](./Graphs/3tri/Exectime.png)
@@ -178,7 +181,7 @@ On remarque que le temps d'exécution du tri par insertion augmente proportionne
 
 ![exectime](./Graphs/3tri/Exectime3Croissant.png)
 
-Cette fois ci on analyse le temps d'éxecution pour des tableaux qui ont des valeurs triées par ordre croissant.
+Maintenant, on analyse le temps d'éxecution pour des tableaux qui ont des valeurs triées par ordre croissant.
 On constate que le temps d'éxecution du tri rapide augmente proportionellement pour des tableaux triées par ordre croissant. Le tri rapide n'est donc pas efficace pour des tableaux triés par ordre croissant.
 
 
