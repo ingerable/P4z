@@ -89,37 +89,54 @@ sys  0m0.666s
 
 Celui qui nous intéresse dépend des besoin et du contexte. Souvent on ne porte attention que sur le temps "user" ou le total du temps "user" et "sys".
 
-## [Unix] Vérifier la mémoire utilisée
+## [Unix] Vérification de la mémoire utilisée
 
+Linux, encore une fois propose une commande bien utile. Il s'agit de la commande base "ulimit" qui permet de fixer une limite pour certaines ressources. Ces limites seront appliquées à tout programme lancé à partir de ce shell.
 
-our vérifier que votre programme n'utilise pas trop de mémoire, sous linux, vous pouvez utiliser la commande bash "ulimit", qui permet de fixer une limite pour certaines ressources. Ces limites seront appliquées à tout programme lancé à partir de ce shell.
+Pour fixer une limite globale à l'utilisation de la mémoire :
 
-Attention : une fois que vous avez fixé une limite, vous ne pouvez pas la réaugmenter sans quitter le shell. Lancer donc un nouveau shell temporairement (commande sh) pour faire votre test.
-
->Pour fixer une limite globale à l'utilisation de la mémoire :
-
-   ulimit -v taille_memoire
+- `ulimit -v taille_memoire`
 
 où taille_memoire est une valeur en kilo-octets. Par exemple pour limiter à 16 Mo :
 
-   ulimit -v 16000
+- `ulimit -v 16000`
 
-Si vous exécutez ensuite votre programme dans ce shell, une erreur sera affichée si la mémoire est insuffisante. Il peut s'agir d'un simple message "Killed", ou d'une erreur d'allocation, ou de segmentation. Si vous utilisez des mallocs, vérifiez qu'ils n'ont pas renvoyé un pointeur nul.
+Une erreur sera affichée si la mémoire du programme est insuffisante. On peut en effet se retrouver face à une erreur d'allocation, ou de segmentation.
+Une autre option de ulimit `-s` consiste à fixer une limite pour la taille de la pile. Très utile lorsque le champs d'application du programme se concentre sur la récursivité.
 
-Dans certain cas, on peut vous indiquer une limite séparée pour la taille de la pile. Vous pouvez la fixer avec l'option -s :
-
-   ulimit -s taille_pile
+- `ulimit -s taille_pile`
 
 où taille_pile est en kilo-octets.
+Enfin, l'option `-a` nous permet d'afficher toutes les limites qu'il est possible de fixer.
 
-A tout moment, vous pouvez afficher les limites actuelles du shell en appelant "ulimit -v" ou "ulimit -s" sans indiquer la taille. Pour plus de détails, utilisez la commande "ulimit -a" qui permet d'afficher toutes les limites qu'il est possible de fixer.
+## Utilisation de 'diff' pour comparer des résultats
+
+Encore une commande Linux qui nous sera très utile, il s'agit de `diff` :
+En effet, le potentiel de `diff` se révelera lorsque l'on voudra comparer les résultats de deux algorithmes différents.
+La commande ci-dessous affichera toutes les différences trouvées entre le fichier1 et le fichier2 :
+
+- diff fichier1 fichier2
+L'option `-q` de diff permet de cacher les différences, et nous indique seulement par un booléen si deux fichiers sont différents :
+
+- diff -q fichier1 fichier2
+
+L'option `-w` nous permet d'ignorer les différents qui sont des caractères d'espacement comme ' ', '\t', '\n' :
+
+- diff -w fichier1 fichier2
+
+On peut alors tester si les résultats générés par un programme correspondent bien aux résultats attendus. La commande suivante en découle tout naturellement :
+
+- diff -q -w sortie_attendue votre_sortie
+
 
 ## Etude de cas
 
 ### Problématique : La distance entre deux éléments adjacent interfère t-elle dans le temps d'exécution du tri ?
 
 Nous avons un tableaux contenant des éléments de type long long unsigned int. La distance entre chaque élement adjacent est petite. Par exemple, nous avons : [0,1,0,1,0,1]. Nous avons maintenant un autre tableau, de même taille et la distance entre chaque élément est significative : [1, 1000000000, 1, 1000000000, 1, 1000000000].
-La dernière étape est de trier ces deux tableaux avec le tri par insertion, le tri fusion ou le tri rapide au choix. Est-il possible que le temps d'éxecution soit plus important pour le second tableau ?
+La dernière étape est de trier ces deux tableaux avec le tri par insertion, le tri fusion ou le tri rapide au choix.
+
+Est-il possible que le temps d'éxecution soit plus important pour le second tableau ?
 
 ### Eléments de réponse
 
