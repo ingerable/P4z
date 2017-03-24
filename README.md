@@ -207,7 +207,7 @@ Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoi
 
 ## Tri Insertion
 
-**Complexité** | **Pire des cas $`Θ(n^2)`$** | **Moyenne $`Θ(n^2)`$** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
+**Complexité** | **Pire des cas Θ(n<sup>2</sup>)** | **Moyenne  Θ(n<sup>2</sup>) ** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
 |---|---|---|---|---|
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie  |
 |**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
