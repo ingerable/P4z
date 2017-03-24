@@ -104,6 +104,8 @@ int partition(long *A, long debut, long fin)
 	return i;
 }
 
+
+
 void triRapide(long *A, long debut, long fin)
 {
 	long q;
@@ -112,6 +114,39 @@ void triRapide(long *A, long debut, long fin)
 		q=partition(A,debut,fin);
 		triRapide(A,debut,q-1);
 		triRapide(A,q+1,fin);
+	}
+}
+
+int partitionOpti(long *A, long debut, long fin)
+{
+	long pivot = rand()%(fin);
+	long i = debut;
+	long j;
+	long inter; // valeur intermédiaire
+	for(j=debut;j<=fin-1;j++)
+	{
+		if(A[j]<=pivot)
+		{
+			inter=A[j];
+			A[j]=A[i];
+			A[i]=inter;
+			i++;
+		}
+	}
+	inter=A[fin];
+	A[fin]=A[i];
+	A[i]=inter;
+	return i;
+}
+
+void triRapideOpti(long *A, long debut, long fin)
+{
+	long q;
+	if(debut<fin)
+	{
+		q=partitionOpti(A,debut,fin);
+		triRapideOpti(A,debut,q-1);
+		triRapideOpti(A,q+1,fin);
 	}
 }
 
@@ -153,6 +188,9 @@ int main(int argc, char *argv[] )
     }else if(strcmp(argv[3],"aleatoireEtendue")==0)
     {
       tab = generer_tableau_trie_aleatoire_etendu(N);
+    }else if(strcmp(argv[3],"triPartiel")==0)
+    {
+      tab = generer_tableau_trie_partiel(N);
     }
     //afficher_tableau(tab);
 
@@ -167,6 +205,9 @@ int main(int argc, char *argv[] )
     else if(strcmp(argv[2],"rapide")==0)
     {
       triRapide(tab,0,N-1);
+    }else if(strcmp(argv[2],"rapideOpti")==0)
+    {
+      triRapideOpti(tab,0,N-1);
     }
 
 

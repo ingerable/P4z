@@ -2,9 +2,9 @@
 
 NB_TEST=200	
 
-ARGSTRI="insertion"
+ARGSTRI="rapide"
 
-ARGSTAB="croissant decroissant triPartiel"
+ARGSTAB="croissant decroissant aleatoire"
 
 echo -e "test\ttaille\ttri\ttableau\texectime\tmemory"
 
@@ -13,7 +13,7 @@ exe="main"
 
 for test in `seq $NB_TEST`
 do
-	taille=$((($RANDOM)))
+	taille="${RANDOM}00"
 
 	for tri in $ARGSTRI
 	do

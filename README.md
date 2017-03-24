@@ -59,7 +59,7 @@ Complexité dans le pire des cas
 Complexité dans un tableau dont les éléments ont été généré aléatoirement
 Complexité sur de petits tableaux
 Complexité sur un tableau partiellement trié
-=======
+
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -116,13 +116,16 @@ En effet, le potentiel de `diff` se révelera lorsque l'on voudra comparer les r
 La commande ci-dessous affichera toutes les différences trouvées entre le fichier1 et le fichier2 :
 
 - diff fichier1 fichier2
+
 L'option `-q` de diff permet de cacher les différences, et nous indique seulement par un booléen si deux fichiers sont différents :
 
 - diff -q fichier1 fichier2
 
+
 L'option `-w` nous permet d'ignorer les différents qui sont des caractères d'espacement comme ' ', '\t', '\n' :
 
 - diff -w fichier1 fichier2
+
 
 On peut alors tester si les résultats générés par un programme correspondent bien aux résultats attendus. La commande suivante en découle tout naturellement :
 
@@ -147,7 +150,10 @@ Les algorithmes de tris tels que le tri par insertion, le tri rapide et le tri f
 En effet, il n'y a aucun moyen de savoir que 1000000 "est plus grand" que 1. Le nombre total d'opérations effectuées pour trier ces tableaux seront parfaitement identiques d'un tableau à l'autre. En fait, si l'on trie chacun de ces tableaux avec ces algorithmes de tri.
 En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde les éléments se déplacer, on observera que les mouvements exécutés sont les mêmes.
 
-Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes.
+Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes. En témoigne la figure suivante :
+
+<img src="insertionProcheEtendue.png" alt="procheEtendu" >
+
 
 S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
 
@@ -182,56 +188,52 @@ Jetons un coup d'oeil à la consommation de mémoire pour voir si elle aussi a a
 
 On voit que le tri rapide est celui qui utilise le plus de mémoire pour un tableau composé de valeurs croissantes.Le pivot étant le dernier élément du tableaux. Dans le cas du tableau croissant le pivot sera toujours l'élement le plus grand du sous tableau.
 
+### Option -O2
+
+Comme expliqué precedemment l'option -O permettrait de gagner du temps d'execution/compilation/ ou de réduire l'utilisation de mémoire. On peut voir les différents **flags** d'optimisation :
+
+![flags](./compteRenduImages/optimizationFlag.png)
+
+Nous allons tester le flag -O2 pour voir si nous le temps d'éxecution est réduit et si oui si la réduction du temps d'execution est vraiment notable. Nous avons donc génerer 2 executables l'un avec
+le flag d'optimisation l'autre non. Nous avons choisi de tester le flag sur le tri insertion dans le pire et meilleur des cas, c'est à dire pour un tableau trié croissant et un tableau trié décroissants, résultat :
+
+**Tableau decroissant - pire des cas** | **Tableau croissant - meilleur des cas** |
+|---|---|---|---|---|
+|![exectime](./Graphs/optionOptimisation/insertion/optionOptimisationDecroissant.png) | ![exectime](./Graphs/optionOptimisation/insertion/optionOptimisationInsertionCroissant.png) |
 
 
+On voit clairement que pour le pire des cas la différence est très importante, on peut aussi noter que la courbe du temps d'éxecution de l'executable optimisé augmente moins vite que l'executable non optimisé.
+Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoins le flag d'optimisation est très efficace et à ne pas négliger. Lorsque l'on utilise un flag d'optimisation il faut avoir un but précis, les flags optimise un aspect spécifique (temps d'éxecution / mémoire).
 
+## Tri Insertion
 
-
-
-## Complexité dans le meilleur des cas - Tri Insertion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/insertion/insertTousTableaux.png)
-
-## Complexité dans le pire des cas - Tri Insertion
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/insertion/insertTousTableaux.png)
-
-## Complexité moyenne - Tri Insertion
-![exectime](./Graphs/insertion/insertTousTableaux.png)
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
 tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
 L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation,
 cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
 
-## Complexité dans le meilleur des cas - Tri Fusion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
 
-## Complexité dans le pire des cas - Tri Fusion
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
+## Tri Fusion
 
-
-
-## Complexité moyenne - Tri Fusion
-Lorsque le tableau est déjà triée, on obtient en sortie :
-![exectime](./Graphs/fusion/fusionTousTableaux.png)
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
 
 
-## Complexité dans le meilleur des cas - Tri Rapide
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
+## Tri Rapide
+
+**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+|---|---|---|---|---|
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+|**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
 
-## Complexité dans le pire des cas - Tri Rapide
-Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie :
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
-
-## Complexité moyenne - Tri Rapide
-![exectime](./Graphs/rapide/rapideTousTableaux.png)
-
-
-Utilisation : `./a.exe -n fonction`
 
 ## Ajouts possibles
 
