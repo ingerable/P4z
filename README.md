@@ -188,9 +188,10 @@ int main()
 }
 ```
 
+Code assembleur généré avec l'option O2 : 
 
 ```assembly
-.file	"asm.cpp"
+.file	"asm1.c"
 .section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
 .string	"%d\n"
@@ -202,20 +203,20 @@ int main()
 .globl	main
 .type	main, @function
 main:
-.LFB12:
+.LFB11:
 .cfi_startproc
 subq	$8, %rsp
 .cfi_def_cfa_offset 16
-movl	$5000000, %esi
+movl	$100000005, %esi
 movl	$.LC0, %edi
-xorl	%eax, %eax //total = 0
+xorl	%eax, %eax
 call	printf
 xorl	%eax, %eax
 addq	$8, %rsp
 .cfi_def_cfa_offset 8
 ret
 .cfi_endproc
-.LFE12:
+.LFE11:
 .size	main, .-main
 .section	.text.unlikely
 .LCOLDE1:
@@ -223,6 +224,54 @@ ret
 .LHOTE1:
 .ident	"GCC: (Debian 4.9.2-10) 4.9.2"
 .section	.note.GNU-stack,"",@progbits
+
+```
+
+Code assembleur généré sans l'option O2 : 
+
+```assembly
+.file	"asm1.c"
+.section	.rodata
+.LC0:
+.string	"%d\n"
+.text
+.globl	main
+.type	main, @function
+main:
+.LFB0:
+.cfi_startproc
+pushq	%rbp
+.cfi_def_cfa_offset 16
+.cfi_offset 6, -16
+movq	%rsp, %rbp
+.cfi_def_cfa_register 6
+subq	$16, %rsp
+movl	$100000000, -8(%rbp)
+movl	$29, -12(%rbp)
+movl	$1, -4(%rbp)
+jmp	.L2
+.L3:
+movl	-12(%rbp), %eax
+addl	%eax, -4(%rbp)
+.L2:
+movl	-4(%rbp), %eax
+cmpl	-8(%rbp), %eax
+jle	.L3
+movl	-4(%rbp), %eax
+movl	%eax, %esi
+movl	$.LC0, %edi
+movl	$0, %eax
+call	printf
+movl	$0, %eax
+leave
+.cfi_def_cfa 7, 8
+ret
+.cfi_endproc
+.LFE0:
+.size	main, .-main
+.ident	"GCC: (Debian 4.9.2-10) 4.9.2"
+.section	.note.GNU-stack,"",@progbits
+
 ```
 
 ## Notion de complexité
