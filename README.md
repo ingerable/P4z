@@ -60,10 +60,7 @@ Complexité dans un tableau dont les éléments ont été généré aléatoireme
 Complexité sur de petits tableaux
 Complexité sur un tableau partiellement trié
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5d3a03fae14a46b3100f798c07878a4c7fdb7695
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -135,7 +132,7 @@ On peut alors tester si les résultats générés par un programme correspondent
 
 - diff -q -w sortie_attendue votre_sortie
 
-D'ailleurs, je soupçonne très fortement qu'une commande similaire ait été utilisée lors des TPs du module de graphes l'an dernier ;-)
+D'ailleurs, je soupçonne **très fortement** qu'une commande similaire ait été utilisée lors des TPs du module de graphes l'an dernier ;-)
 
 
 ## Etude de cas
@@ -158,13 +155,77 @@ En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde le
 
 Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes. En témoigne la figure suivante :
 
-<img src="insertionProcheEtendue.png" alt="procheEtendu" >
+<img src="Graphs/insertionProcheEtendue.png" alt="procheEtendu" >
 
 
 S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
 
 Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite. Ce dernier pourrait prendre plus de temps pour trier ces tableaux car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
 
+## Un peu d'assembleur
+
+Afin de comprendre tous les tenants et les aboutissants d'un programme, il est existe une option `-S` permettant d'afficher le code en assembleur généré par le compilateur. On peut donc observer ce que le microprocesseur va exécuter à chaque boucle. Exemple d'utilisation : `gcc monProgramme.c -S -O2`.
+
+Les quatre registres de travail sont principalement utilisés pour stocker des résultats :
+
+- **EAX** : registre accumulateur. Utilisé pour les opérations arithmétiques et le stockage de la valeur de retour des appels systèmes.
+- **EDX** : registre de données (data register). Utilisé pour les opérations arithmétiques et les opérations d'entrée/sortie.
+- **ECX** : registre compteur (counter register)
+- **EBX** : registre de base (base register). Utilisé comme pointeur de donnée (située dans DS en mode segmenté).
+
+
+```c
+#include <stdio.h>
+int main()
+{
+   int N, increment, compteur;
+   scanf("%d%d", &N, &increment);
+   int total = 0;
+   for (compteur = 1; compteur <= N; compteur += increment)
+      total++;
+   printf("%d\n", total);
+   return 0;
+}
+```
+
+
+```assembly
+.file	"asm.cpp"
+.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+.string	"%d\n"
+.section	.text.unlikely,"ax",@progbits
+.LCOLDB1:
+.section	.text.startup,"ax",@progbits
+.LHOTB1:
+.p2align 4,,15
+.globl	main
+.type	main, @function
+main:
+.LFB12:
+.cfi_startproc
+subq	$8, %rsp
+.cfi_def_cfa_offset 16
+movl	$5000000, %esi
+movl	$.LC0, %edi
+xorl	%eax, %eax //total = 0
+call	printf
+xorl	%eax, %eax
+addq	$8, %rsp
+.cfi_def_cfa_offset 8
+ret
+.cfi_endproc
+.LFE12:
+.size	main, .-main
+.section	.text.unlikely
+.LCOLDE1:
+.section	.text.startup
+.LHOTE1:
+.ident	"GCC: (Debian 4.9.2-10) 4.9.2"
+.section	.note.GNU-stack,"",@progbits
+```
+
+## Notion de complexité
 
 ## Résultats et analyses
 
@@ -218,10 +279,8 @@ Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoi
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie  |
 |**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
 
-Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
-tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
-L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation,
-cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
+Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
+L'algorithme tirera en effet parti de tout ordre partiel présent dans le tableau. Avec sa simplicité d'implantation, cette propriété le promu tout naturellement pour "finir le travail" de méthodes plus lourdes comme le tri rapide ou le tri fusion.
 
 
 ## Tri Fusion
