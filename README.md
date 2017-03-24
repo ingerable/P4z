@@ -203,13 +203,13 @@ le flag d'optimisation l'autre non. Nous avons choisi de tester le flag sur le t
 
 
 On voit clairement que pour le pire des cas la différence est très importante, on peut aussi noter que la courbe du temps d'éxecution de l'executable optimisé augmente moins vite que l'executable non optimisé.
-Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoins le flag d'optimisation est très efficace et à ne pas négliger. Lorsque l'on utilise un flag d'optimisation il faut avoir un but précis, les flags optimise un aspect spécifique (temps d'éxecution / mémoire). 
+Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoins le flag d'optimisation est très efficace et à ne pas négliger. Lorsque l'on utilise un flag d'optimisation il faut avoir un but précis, les flags optimise un aspect spécifique (temps d'éxecution / mémoire).
 
 ## Tri Insertion
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+**Complexité** | **Pire des cas $`Θ(n^2)`$** | **Moyenne $`Θ(n^2)`$** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie  |
 |**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du
@@ -220,7 +220,7 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 
 ## Tri Fusion
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+**Complexité** | **Pire des cas** | **Moyenne $`Θ(n*log(n))`$** | **Meilleur des cas** |
 |---|---|---|---|---|
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
 |**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
@@ -228,7 +228,7 @@ cette propriété le promu tout naturellement pour "finir le travail" de méthod
 
 ## Tri Rapide
 
-**Complexité** | **Pire des cas** | **Moyen** | **Meilleur des cas** |
+**Complexité** | **Pire des cas $`Θ(n^2)`$** | **Moyenne $`Θ(n*log(n))`$** | **Meilleur des cas** |
 |---|---|---|---|---|
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
