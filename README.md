@@ -313,10 +313,10 @@ On parle de complexité algorithmique lorsque l'on veut évaluer la performance 
 la complexité. En mathématiques on parle de comparaison asymptotique, cela consiste à étudier le comportement d'une fonction près d'un point en se basant sur une fonction connue et simple. On à donc une liste de fonction connues en analyse. Ici n tends vers + l'infini. Les fonctions sont triées par ordre croissant de grandeur :
 
 * O(1) : complexité constante quel que soit la taille de la donnée en entrée
-* O\log(x) : complexité logaritmique
-* O\sqrt{n} : complexité racinaire
+* O(log(n)) : complexité logaritmique
+* O(\( \sqrt{n} \)) : complexité racinaire
 * O(n) : complexité linéaire proportionnellement à la taille de la donnée en entrée
-* O(n\log(x)) : complexité linéarithmique
+* O(nlog(n)) : complexité linéarithmique
 * O\(n^2\) : complexité quadratique, commune pour les algorithmes impliquant des boucles imbriquées
 * O\(n^3\) : complexité cubique
 * O\(2^n\) : complexité exponentielle
