@@ -308,6 +308,68 @@ En somme, le temps d'exécution des instructions dépend de nombreux facteurs, e
 
 ## Notion de complexité
 
+Quelques exemples permettant d'estimer la complexité d'un algorithme.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à N
+      Pour compteur3 allant de 1 à N
+         total = total + 1
+```
+
+Dans le pseudo-code présenté ci-dessus, trois boucles sont imbriquées, chacune allant jusqu'à N, soit **N*N*N** exécutions de la boucle la plus interne, donc une complexité de O(N<sup>3</sup>). Pour illustrer mon propos, si N est égal à 1000, la boucle la plus interne bouclera 1 milliard de fois.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à N
+     total = total + 1
+Pour compteur3 allant de 1 à N
+   total = total + 1
+```
+
+Ici, la boucle interne de la première partie va s'exécuter N<sup>2</sup> fois. La boucle de la deuxième partie va s'exécuter N fois. Une intuition naïve nous laisserait penser que la complexité est en O(N<sup>2</sup> + N). Cependant, pour une valeur très grande de N, N devient négligeable par rapport à N<sup>2</sup>, et le temps d'exécution approximativement proportionnel à N<sup>2</sup>. La complexité de l'algorithme est donc déterminée : **O(N<sup>2</sup>)**.
+
+## Complexité en fonction de plusieurs variables
+
+Nous testons maintenant des algorithmes en fonction de plusieurs variables. Ici, il s'agit des variables **N** et **P** :
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à P
+      total = total + 1
+```
+
+La complexité est simple à determiner. En effet, il y a N*P itérations, la complexité en découle tout naturellement :
+**O(N*P)**.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N * 2
+   Pour compteur2 allant de 1 à N
+     total = total + 1
+Pour compteur3 allant de 1 à P
+   total = total + 1
+Pour compteur4 allant de 1 à 10
+   total = total + 1
+```
+
+Le nombre d'itérations est égal à : **2*N2 + P + 10**. Comme précédemment, selon les valeurs de N ou P, 10 peut devenir négligeable, et n'est donc pas nécessaire à notre calcul de complexité. Par analogie, la constante multiplicative 2 est abandonnée.
+Une fausse idée serait de penser que pour une certaine valeur de N, P devient négligeable devant N(N<sup>2</sup>). Cependant, on ne peut conjecturer sur la valeur de P, qui peut être bien plus grand que N(N<sup>2</sup>). On garde donc P dans la complexité obtenue : **O(N2 + P)**.
+
+```bash
+total = 0
+donnees est un tableau de N valeurs entières
+Pour compteur1 allant de 1 à N
+   valeur = donnee[compteur1]
+   Pour compteur2 allant de 1 à valeur
+      total = total + 1
+```
+
+Le nombre d'itérations de l'algorithme résulte du contenu de chacune des cases du tableau. Comme il nous est impossible de prédir la complexité pour chaque valeur du tableau, il nous faut déterminer la complexité dans le pire des cas. Une solution est de fixer une nouvelle variable P, représentant la valeur maximale pouvant être stockée dans le tableau. Dans le cas d'un tableau de **int** l'intervalle est : `–2,147,483,648` à `2,147,483,647`. Une fois cette variable specifiée, la complexité est alors être déterminée : **O(N*P)**.
+
 ## Résultats et analyses
 
 Pour commencer, nous avons testé le temps d'exécution des 3 tris sur un tableau de valeurs générées aléatoirement et de type `long long unsigned int`
