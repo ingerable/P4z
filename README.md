@@ -357,7 +357,7 @@ Pour compteur4 allant de 1 à 10
 ```
 
 Le nombre d'itérations est égal à : **2*N2 + P + 10**. Comme précédemment, selon les valeurs de N ou P, 10 peut devenir négligeable, et n'est donc pas nécessaire à notre calcul de complexité. Par analogie, la constante multiplicative 2 est abandonnée.
-Une fausse idée serait de penser que pour une certaine valeur de N, P devient négligeable devant N(N<sup>2</sup>). Cependant, on ne peut conjecturer sur la valeur de P, qui peut être bien plus grand que N(N<sup>2</sup>). On garde donc P dans la complexité obtenue : **O(N2 + P)**.
+Une fausse idée serait de penser que pour une certaine valeur de N, P devient négligeable devant O(N<sup>2</sup>). Cependant, on ne peut conjecturer sur la valeur de P, qui peut être bien plus grand que O(N<sup>2</sup>). On garde donc P dans la complexité obtenue : **O(N<sup>2</sup> + P)**.
 
 ```bash
 total = 0
@@ -444,9 +444,17 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 
 ## Conclusion Finale
 
-Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation,
+Le temps d'exécution d'un programme est dépendant de nombreux paramètres tels que :
+
+- Du type et de la fréquence du microprocesseur utilisé.
+- Du langage utilisé et du compilateur choisi, ainsi que de ses réglages.
+- Des données d'entrée
+- De la complexité en temps de l'algorithme
+
+Ces nombreux obstacles font qu'on ne peut obtenir qu'une approximation grossière du temps d'exécution. Le calcul de la complexité en temps nous pourvoit néanmoins un bon moyen pour comparer plusieurs algorithmes entre eux, avant même de les avoir implantés et testés.
+
+Ce qu'il faut retenir ici, c'est qu'aucun des trois algorithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation,
 la problèmatique, ou encore les enjeux derrière le programme, un des trois algorithmes sera à privilégier. Il faut alors avant de se
 précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
 ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
-Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le
-terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
+Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
