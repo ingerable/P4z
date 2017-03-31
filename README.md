@@ -308,6 +308,20 @@ En somme, le temps d'exécution des instructions dépend de nombreux facteurs, e
 
 ## Notion de complexité
 
+
+On parle de complexité algorithmique lorsque l'on veut évaluer la performance d'un algorithme. C'est à dire estimer la quantité de ressource (temps ou mémoire) qui sera utilisé lors de l'éxecution de l'algorithme. On utilise la notation Big O pour définir
+la complexité. En mathématiques on parle de comparaison asymptotique, cela consiste à étudier le comportement d'une fonction près d'un point en se basant sur une fonction connue et simple. On à donc une liste de fonction connues en analyse. Ici n tends vers + l'infini. Les fonctions sont triées par ordre croissant de grandeur :
+
+* O(1) : complexité constante quel que soit la taille de la donnée en entrée
+* O(log(n)) : complexité logaritmique
+* O($$\sqrt{n}$$) : complexité racinaire
+* O(n) : complexité linéaire proportionnellement à la taille de la donnée en entrée
+* O(nlog(n)) : complexité linéarithmique
+* O($$n^2$$) : complexité quadratique, commune pour les algorithmes impliquant des boucles imbriquées
+* O($$n^3$$) : complexité cubique
+* O($$2^n$$) : complexité exponentielle
+* O$$n!$$) : complexité factorielle
+
 Quelques exemples permettant d'estimer la complexité d'un algorithme.
 
 ```bash
@@ -370,6 +384,7 @@ Pour compteur1 allant de 1 à N
 
 Le nombre d'itérations de l'algorithme résulte du contenu de chacune des cases du tableau. Comme il nous est impossible de prédir la complexité pour chaque valeur du tableau, il nous faut déterminer la complexité dans le pire des cas. Une solution est de fixer une nouvelle variable P, représentant la valeur maximale pouvant être stockée dans le tableau. Dans le cas d'un tableau de **int** l'intervalle est : `–2,147,483,648` à `2,147,483,647`. Une fois cette variable specifiée, la complexité est alors être déterminée : **O(N*P)**.
 
+
 ## Résultats et analyses
 
 Pour commencer, nous avons testé le temps d'exécution des 3 tris sur un tableau de valeurs générées aléatoirement et de type `long long unsigned int`
@@ -419,7 +434,7 @@ Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoi
 
 **Complexité** | **Pire des cas Θ(n<sup>2</sup>)** | **Moyenne  Θ(n<sup>2</sup>) ** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie  |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |   |
 |**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
 
 Conclusion : Au cours de nos analyses et avec (un peu) l'aide du cours de M.ZIMMERMANN, on a pu remarquer une propriété intéressante du tri insertion. En effet, son efficacité est meilleur que les deux autres algortithmes si le tableau initial possède un certain ordre.
@@ -430,7 +445,7 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 
 **Complexité** | **Pire des cas** | **Moyenne $`Θ(n*log(n))`$** | **Meilleur des cas** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |  |
 |**Courbes** | ![exectime](./Graphs/fusion/fusionTousTableaux.png) |
 
 
@@ -438,9 +453,19 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 
 **Complexité** | **Pire des cas $`Θ(n^2)`$** | **Moyenne $`Θ(n*log(n))`$** | **Meilleur des cas** |
 |---|---|---|---|---|
-| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | | Lorsque le tableau est déjà triée, on obtient en sortie |
+| **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |  |
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
+## Optimisation tri rapide
+
+On a pu remarquer que le choix du pivot était important car il pouvait diminiuer drastiquement les performances de l'algorithmes. Cette fois ci de choisir pour pviot la
+moyenne des valeurs du sous tableau.
+
+|  Tableau avec valeurs triées par ordre croissant | Tableau avec valeurs triées par ordre decroissante   |
+|---|---|
+| ![exectime](./Graphs/insertionOptimisation/rapidePivotOptimisationCroissant.png)  |   ![exectime](./Graphs/insertionOptimisation/rapidePivotOptimisationDecroissant.png) |
+
+On constate qu'effectivement en prenant une moyenne comme pivot le temps d'éxecution est nettement plus rapide.
 
 ## Conclusion Finale
 
