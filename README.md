@@ -53,14 +53,6 @@ Sur différent sites de challenge de programation, une limite de temps est impos
 L'objectif de cet article sera d'estimer grossièrement la célérité d'un algorithme avant même de le lancer. Il s'agit du calcul de la complexité en temps d'un algorithme.
 Nous travaillerons avec le langage C et le compilateur gcc.
 
-gcc -s
-Complexité dans le meilleur des cas
-Complexité dans le pire des cas
-Complexité dans un tableau dont les éléments ont été généré aléatoirement
-Complexité sur de petits tableaux
-Complexité sur un tableau partiellement trié
-
-
 ## Ligne de commande de compilation C/C++
 
 `g++ -Wall -O2 -o output.exe tri.cpp`
@@ -160,7 +152,7 @@ Si l'on se place dans le contexte de trier des entiers qui correspondent à un s
 
 S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
 
-Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite. Ce dernier pourrait prendre plus de temps pour trier ces tableaux car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
+Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite pourraient prendre plus de temps pour trier ces tableaux. En effet, car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
 
 ## Un peu d'assembleur
 
@@ -171,69 +163,38 @@ Les quatre registres de travail sont principalement utilisés pour stocker des r
 - **EAX** : registre accumulateur. Utilisé pour les opérations arithmétiques et le stockage de la valeur de retour des appels systèmes.
 - **EDX** : registre de données (data register). Utilisé pour les opérations arithmétiques et les opérations d'entrée/sortie.
 - **ECX** : registre compteur (counter register)
-- **EBX** : registre de base (base register). Utilisé comme pointeur de donnée (située dans DS en mode segmenté).
+- **EBX** : registre de base (base register). Utilisé comme pointeur de donnée.
 
+Prenons le code c du tri insertion :
 
 ```c
 #include <stdio.h>
-int main()
-{
-   int N, increment, compteur;
-   scanf("%d%d", &N, &increment);
-   int total = 0;
-   for (compteur = 1; compteur <= N; compteur += increment)
-      total++;
-   printf("%d\n", total);
-   return 0;
+
+int main(int argc, char * argv []) {
+  int A[5] = {19, 10, 8, 17, 9};
+  int N = 5;
+  int cmpr=0;
+  int writings=0;
+  for(int i=1;i<N;i++)
+  {
+    long key = A[i];
+    long j = i;
+    while(j>0 && A[j-1]>key)
+    {
+      A[j]=A[j-1];
+      j=j-1;
+      writings+=1;
+    }
+    A[j]=key;
+    cmpr+=1;
+  }
 }
 ```
 
-Code assembleur généré avec l'option O2 : 
+Code assembleur généré sans l'option O2 :
 
 ```assembly
-.file	"asm1.c"
-.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-.string	"%d\n"
-.section	.text.unlikely,"ax",@progbits
-.LCOLDB1:
-.section	.text.startup,"ax",@progbits
-.LHOTB1:
-.p2align 4,,15
-.globl	main
-.type	main, @function
-main:
-.LFB11:
-.cfi_startproc
-subq	$8, %rsp
-.cfi_def_cfa_offset 16
-movl	$100000005, %esi
-movl	$.LC0, %edi
-xorl	%eax, %eax
-call	printf
-xorl	%eax, %eax
-addq	$8, %rsp
-.cfi_def_cfa_offset 8
-ret
-.cfi_endproc
-.LFE11:
-.size	main, .-main
-.section	.text.unlikely
-.LCOLDE1:
-.section	.text.startup
-.LHOTE1:
-.ident	"GCC: (Debian 4.9.2-10) 4.9.2"
-.section	.note.GNU-stack,"",@progbits
-
-```
-
-Code assembleur généré sans l'option O2 : 
-
-```assembly
-.file	"asm1.c"
-.section	.rodata
-.LC0:
-.string	"%d\n"
+.file	"insert.c"
 .text
 .globl	main
 .type	main, @function
@@ -245,25 +206,58 @@ pushq	%rbp
 .cfi_offset 6, -16
 movq	%rsp, %rbp
 .cfi_def_cfa_register 6
-subq	$16, %rsp
-movl	$100000000, -8(%rbp)
-movl	$29, -12(%rbp)
-movl	$1, -4(%rbp)
+movl	%edi, -68(%rbp)
+movq	%rsi, -80(%rbp)
+movl	$19, -64(%rbp)
+movl	$10, -60(%rbp)
+movl	$8, -56(%rbp)
+movl	$17, -52(%rbp)
+movl	$9, -48(%rbp)
+movl	$5, -28(%rbp)
+movl	$0, -4(%rbp)
+movl	$0, -8(%rbp)
+movl	$1, -12(%rbp)
 jmp	.L2
-.L3:
+.L6:
 movl	-12(%rbp), %eax
-addl	%eax, -4(%rbp)
+cltq
+movl	-64(%rbp,%rax,4), %eax
+cltq
+movq	%rax, -40(%rbp)
+movl	-12(%rbp), %eax
+cltq
+movq	%rax, -24(%rbp)
+jmp	.L3
+.L5:
+movq	-24(%rbp), %rax
+subq	$1, %rax
+movl	-64(%rbp,%rax,4), %edx
+movq	-24(%rbp), %rax
+movl	%edx, -64(%rbp,%rax,4)
+subq	$1, -24(%rbp)
+addl	$1, -8(%rbp)
+.L3:
+cmpq	$0, -24(%rbp)
+jle	.L4
+movq	-24(%rbp), %rax
+subq	$1, %rax
+movl	-64(%rbp,%rax,4), %eax
+cltq
+cmpq	-40(%rbp), %rax
+jg	.L5
+.L4:
+movq	-40(%rbp), %rax
+movl	%eax, %edx
+movq	-24(%rbp), %rax
+movl	%edx, -64(%rbp,%rax,4)
+addl	$1, -4(%rbp)
+addl	$1, -12(%rbp)
 .L2:
-movl	-4(%rbp), %eax
-cmpl	-8(%rbp), %eax
-jle	.L3
-movl	-4(%rbp), %eax
-movl	%eax, %esi
-movl	$.LC0, %edi
+movl	-12(%rbp), %eax
+cmpl	-28(%rbp), %eax
+jl	.L6
 movl	$0, %eax
-call	printf
-movl	$0, %eax
-leave
+popq	%rbp
 .cfi_def_cfa 7, 8
 ret
 .cfi_endproc
@@ -271,8 +265,46 @@ ret
 .size	main, .-main
 .ident	"GCC: (Debian 4.9.2-10) 4.9.2"
 .section	.note.GNU-stack,"",@progbits
-
 ```
+
+Code assembleur généré avec l'option O2 :
+
+```assembly
+.file	"insert.c"
+.section	.text.unlikely,"ax",@progbits
+.LCOLDB0:
+.section	.text.startup,"ax",@progbits
+.LHOTB0:
+.p2align 4,,15
+.globl	main
+.type	main, @function
+main:
+.LFB3:
+.cfi_startproc
+xorl	%eax, %eax
+ret
+.cfi_endproc
+.LFE3:
+.size	main, .-main
+.section	.text.unlikely
+.LCOLDE0:
+.section	.text.startup
+.LHOTE0:
+.ident	"GCC: (Debian 4.9.2-10) 4.9.2"
+.section	.note.GNU-stack,"",@progbits
+```
+
+Dans le cas du second programme, le compilateur a détecté qu'il était plus efficace de changer le comportement de notre programme initial. En effet, nous observons que cela ne correspond pas à ce que l'on avait écrit en ométtant l'option O2. Néanmoins, notre programme fonctionne correctement. Le compilateur, lorsque les options d'optimisation sont activées peut prendre certaines libertés et réaliser un certain nombre de manipulations sur notre programme lors de la transformation en code exécutable. Vous l'aurez compris, cela nous complexifie grandement la tâche dans notre quête de prédiction du temps d'exécution.
+
+Premièrement, il faut garder à l'idée que les temps d'exécution des différentes instructions du micro-processeur ne sont pas tous les mêmes.
+La fréquence d'un microprocesseur est définit par le nombre de cycles qu'il est capable d'exécuter en une seconde. Un microprocesseur ayant une fréquence de 1Ghz peut dont prétendre exécuter un milliard de cycles par seconde. A chaque cycle, le processeur exécute une phase de l'exécution d'une instruction, telle que : la **lire en mémoire**, la **décoder**, **écrire le résultat**, etc. Les processeurs actuels ont la capacité de manipuler diverses instructions en même temps, donc exécuter lors du même cycle, une phase de chacune des instructions qu'il est en train de traiter. Pour illustrer ce propos, le compilateur est apte à lire en mémoire l'instruction suivante au même moment que l'écriture du résultat de l'instruction courante !
+
+Souvent le processeur nécessite plusieurs cycles processeurs pour exécuter entièrement une instruction, mais sur un certain nombre d'instructions consécutives, dont une partie de l'exécution est faite en parallèle, le temps moyen d'exécution d'une instruction peut être bien inférieur, et ne faire qu'un cycle, parfois même moins, mais parfois bien plus, selon le type d'instructions.
+
+En conclusion, donner une estimation précise du temps d'éxecution d'un programme est en fait très compliqué : On pourrait penser qu'il suffit de compter le nombre d'instructions, mais cela est inexacte, toute simplement car différentes instructions demandent un temps différent. Ensuite, comme on a pu le constater le compilateur peut bouleverser le comportement de notre programme et par conséquent nous ne pouvons préméditer le nombre exacte d'instructions de notre programme après compilation.
+
+En somme, le temps d'exécution des instructions dépend de nombreux facteurs, et on ne peut donner que des approximations. Nous pouvons néanmoins Pour se faire une idée des temps d'exécutions de différents types d'instruction, le plus simple reste donc l'expérimentation.
+
 
 ## Notion de complexité
 
