@@ -456,6 +456,16 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |  |
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
+## Optimisation tri rapide
+
+On a pu remarquer que le choix du pivot était important car il pouvait diminiuer drastiquement les performances de l'algorithmes. Cette fois ci de choisir pour pviot la
+moyenne des valeurs du sous tableau.
+
+|  Tableau avec valeurs triées par ordre croissant | Tableau avec valeurs triées par ordre decroissante   |
+|---|---|
+| ![exectime](./Graphs/insertionOptimisation/rapidePivotOptimisationCroissant.png)  |   ![exectime](./Graphs/insertionOptimisation/rapidePivotOptimisationDecroissant.png) |
+
+On constate qu'effectivement en prenant une moyenne comme pivot le temps d'éxecution est nettement plus rapide.
 
 ## Conclusion Finale
 
