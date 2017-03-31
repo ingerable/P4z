@@ -308,6 +308,7 @@ En somme, le temps d'exécution des instructions dépend de nombreux facteurs, e
 
 ## Notion de complexité
 
+
 On parle de complexité algorithmique lorsque l'on veut évaluer la performance d'un algorithme. C'est à dire estimer la quantité de ressource (temps ou mémoire) qui sera utilisé lors de l'éxecution de l'algorithme. On utilise la notation Big O pour définir
 la complexité. En mathématiques on parle de comparaison asymptotique, cela consiste à étudier le comportement d'une fonction près d'un point en se basant sur une fonction connue et simple. On à donc une liste de fonction connues en analyse. Ici n tends vers + l'infini. Les fonctions sont triées par ordre croissant de grandeur :
 
@@ -320,6 +321,69 @@ la complexité. En mathématiques on parle de comparaison asymptotique, cela con
 * O($$n^3$$) : complexité cubique
 * O($$2^n$$) : complexité exponentielle
 * O$$n!$$) : complexité factorielle
+
+Quelques exemples permettant d'estimer la complexité d'un algorithme.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à N
+      Pour compteur3 allant de 1 à N
+         total = total + 1
+```
+
+Dans le pseudo-code présenté ci-dessus, trois boucles sont imbriquées, chacune allant jusqu'à N, soit **N*N*N** exécutions de la boucle la plus interne, donc une complexité de O(N<sup>3</sup>). Pour illustrer mon propos, si N est égal à 1000, la boucle la plus interne bouclera 1 milliard de fois.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à N
+     total = total + 1
+Pour compteur3 allant de 1 à N
+   total = total + 1
+```
+
+Ici, la boucle interne de la première partie va s'exécuter N<sup>2</sup> fois. La boucle de la deuxième partie va s'exécuter N fois. Une intuition naïve nous laisserait penser que la complexité est en O(N<sup>2</sup> + N). Cependant, pour une valeur très grande de N, N devient négligeable par rapport à N<sup>2</sup>, et le temps d'exécution approximativement proportionnel à N<sup>2</sup>. La complexité de l'algorithme est donc déterminée : **O(N<sup>2</sup>)**.
+
+## Complexité en fonction de plusieurs variables
+
+Nous testons maintenant des algorithmes en fonction de plusieurs variables. Ici, il s'agit des variables **N** et **P** :
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N
+   Pour compteur2 allant de 1 à P
+      total = total + 1
+```
+
+La complexité est simple à determiner. En effet, il y a N*P itérations, la complexité en découle tout naturellement :
+**O(N*P)**.
+
+```bash
+total = 0
+Pour compteur1 allant de 1 à N * 2
+   Pour compteur2 allant de 1 à N
+     total = total + 1
+Pour compteur3 allant de 1 à P
+   total = total + 1
+Pour compteur4 allant de 1 à 10
+   total = total + 1
+```
+
+Le nombre d'itérations est égal à : **2*N2 + P + 10**. Comme précédemment, selon les valeurs de N ou P, 10 peut devenir négligeable, et n'est donc pas nécessaire à notre calcul de complexité. Par analogie, la constante multiplicative 2 est abandonnée.
+Une fausse idée serait de penser que pour une certaine valeur de N, P devient négligeable devant N(N<sup>2</sup>). Cependant, on ne peut conjecturer sur la valeur de P, qui peut être bien plus grand que N(N<sup>2</sup>). On garde donc P dans la complexité obtenue : **O(N2 + P)**.
+
+```bash
+total = 0
+donnees est un tableau de N valeurs entières
+Pour compteur1 allant de 1 à N
+   valeur = donnee[compteur1]
+   Pour compteur2 allant de 1 à valeur
+      total = total + 1
+```
+
+Le nombre d'itérations de l'algorithme résulte du contenu de chacune des cases du tableau. Comme il nous est impossible de prédir la complexité pour chaque valeur du tableau, il nous faut déterminer la complexité dans le pire des cas. Une solution est de fixer une nouvelle variable P, représentant la valeur maximale pouvant être stockée dans le tableau. Dans le cas d'un tableau de **int** l'intervalle est : `–2,147,483,648` à `2,147,483,647`. Une fois cette variable specifiée, la complexité est alors être déterminée : **O(N*P)**.
+
 
 ## Résultats et analyses
 
@@ -392,26 +456,6 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |  |
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
-
-
-## Ajouts possibles
-
-Pour faciliter l'automatisation et la rapidité des tests nous aurions pu mettre en place un système d'arguments en ligne de commande pour selectionner le tri et le tableau voulant être testé. Nous n'avons pas eu le temps de comparer les différentes comparaisons et écritures. Tester d'autres algorithmes peut être interéssant (tri à bulles...). Nous avons mis en place 3 type de tableaux mais il aurait été possible de trouver d'autres types de tableaux plus particuliers.
-
-Plan du futur compte rendu :
-
-Introduction
-
-Efficacité d'un programme
-
-Nombre d'opérations d'un algorithme
-
-Complexité d'un algorithme
-
-Complexité et temps de calcul
-
-Notation O()
-Conclusion
 
 ## Conclusion Finale
 
