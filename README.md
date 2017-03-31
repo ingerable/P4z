@@ -314,7 +314,7 @@ la complexité. En mathématiques on parle de comparaison asymptotique, cela con
 
 * O(1) : complexité constante quel que soit la taille de la donnée en entrée
 * O(log(n)) : complexité logaritmique
-* O(\( \sqrt{n} \)) : complexité racinaire
+* O(racine(n)) : complexité racinaire
 * O(n) : complexité linéaire proportionnellement à la taille de la donnée en entrée
 * O(nlog(n)) : complexité linéarithmique
 * O\(n^2\) : complexité quadratique, commune pour les algorithmes impliquant des boucles imbriquées
