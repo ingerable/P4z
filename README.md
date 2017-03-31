@@ -442,26 +442,6 @@ L'algorithme tirera en effet parti de tout ordre partiel présent dans le tablea
 |**Courbes** | ![exectime](./Graphs/rapide/rapideTousTableaux.png) |
 
 
-
-## Ajouts possibles
-
-Pour faciliter l'automatisation et la rapidité des tests nous aurions pu mettre en place un système d'arguments en ligne de commande pour selectionner le tri et le tableau voulant être testé. Nous n'avons pas eu le temps de comparer les différentes comparaisons et écritures. Tester d'autres algorithmes peut être interéssant (tri à bulles...). Nous avons mis en place 3 type de tableaux mais il aurait été possible de trouver d'autres types de tableaux plus particuliers.
-
-Plan du futur compte rendu :
-
-Introduction
-
-Efficacité d'un programme
-
-Nombre d'opérations d'un algorithme
-
-Complexité d'un algorithme
-
-Complexité et temps de calcul
-
-Notation O()
-Conclusion
-
 ## Conclusion Finale
 
 Ce qu'il faut retenir ici, c'est qu'aucun des trois algortithmes n'est foncièrement meilleur qu'un autre. En effet, selon la situation,
