@@ -393,7 +393,7 @@ de taille variable.
 ![exectime](./Graphs/3tri/Exectime.png)
 
 On remarque que le temps d'exécution du tri par insertion augmente proportionnellement
-à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible.
+à la taille du tableau tandis que le temps d'execution des 2 autres tri est constant et très faible. Maintenant la consommation mémoire : 
 
 ![memory](./Graphs/3tri/insertionFusionRapideMemoryCourbes.png)
 
