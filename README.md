@@ -317,10 +317,10 @@ la complexité. En mathématiques on parle de comparaison asymptotique, cela con
 * O($$\sqrt{n}$$) : complexité racinaire
 * O(n) : complexité linéaire proportionnellement à la taille de la donnée en entrée
 * O(nlog(n)) : complexité linéarithmique
-* O($$n^2$$) : complexité quadratique, commune pour les algorithmes impliquant des boucles imbriquées
-* O($$n^3$$) : complexité cubique
-* O($$2^n$$) : complexité exponentielle
-* O$$n!$$) : complexité factorielle
+* O(\(n^2\)) : complexité quadratique, commune pour les algorithmes impliquant des boucles imbriquées
+* O(\(n^3\)) : complexité cubique
+* O(\(2^n\)) : complexité exponentielle
+* O(n!) : complexité factorielle
 
 Quelques exemples permettant d'estimer la complexité d'un algorithme.
 
