@@ -152,7 +152,7 @@ Si l'on se place dans le contexte de trier des entiers qui correspondent à un s
 
 S'il y a une différence, cela signifie que le processeur que vous utilisez peut comparer ou déplacer des nombres de tailles différentes dans des quantités de temps différentes. Pour autant que je sache, il n'existe pas d'architectures de processeurs qui le fassent.
 
-Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite pourraient prendre plus de temps pour trier ces tableaux. En effet, car ils travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
+Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le tri par base (tri radix), qui n'appartiennent pas à la famille des tris de comparaison et dépendent de la taille des entiers que l'on traite pourraient prendre plus de temps pour trier ces tableaux. En effet, car ces tris travaillent soit un chiffre à la fois ou en les distribuant dans un tableau dont la taille dépend de la taille des nombres en questions. Dans ces cas, il est possible d'observer une différence entre les temps d'exécutions, à condition que l'algorithme employé ait bien été mis en œuvre.
 
 ## Un peu d'assembleur
 
@@ -301,9 +301,9 @@ La fréquence d'un microprocesseur est définit par le nombre de cycles qu'il es
 
 Souvent le processeur nécessite plusieurs cycles processeurs pour exécuter entièrement une instruction, mais sur un certain nombre d'instructions consécutives, dont une partie de l'exécution est faite en parallèle, le temps moyen d'exécution d'une instruction peut être bien inférieur, et ne faire qu'un cycle, parfois même moins, mais parfois bien plus, selon le type d'instructions.
 
-En conclusion, donner une estimation précise du temps d'éxecution d'un programme est en fait très compliqué : On pourrait penser qu'il suffit de compter le nombre d'instructions, mais cela est inexacte, toute simplement car différentes instructions demandent un temps différent. Ensuite, comme on a pu le constater le compilateur peut bouleverser le comportement de notre programme et par conséquent nous ne pouvons préméditer le nombre exacte d'instructions de notre programme après compilation.
+En conclusion, donner une estimation précise du temps d'éxecution d'un programme est en fait très compliqué : On pourrait penser qu'il suffit de compter le nombre d'instructions, mais cela est inexact, tout simplement car différentes instructions demandent un temps différent. Ensuite, comme on a pu le constater le compilateur peut bouleverser le comportement de notre programme et par conséquent nous ne pouvons préméditer le nombre exacte d'instructions de notre programme après compilation.
 
-En somme, le temps d'exécution des instructions dépend de nombreux facteurs, et on ne peut donner que des approximations. Nous pouvons néanmoins Pour se faire une idée des temps d'exécutions de différents types d'instruction, le plus simple reste donc l'expérimentation.
+En somme, le temps d'exécution des instructions dépend de nombreux facteurs, et on ne peut donner que des approximations. Nous pouvons néanmoins se faire une idée des temps d'exécutions de différents types d'instruction, le plus simple reste donc l'expérimentation.
 
 
 ## Notion de complexité
@@ -491,4 +491,6 @@ Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau
 [Big O notation - Wikipédia](https://en.wikipedia.org/wiki/Big_O_notation)
 
 [Comparaison asymptotique - Wikipédia](https://fr.wikipedia.org/wiki/Comparaison_asymptotique)
+
+http://www.france-ioi.org/algo/course.php?idChapter=551&idCourse=1806
 
