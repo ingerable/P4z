@@ -484,7 +484,7 @@ précipiter sur un algorithme de tri, étudier son comportement sous différents
 ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
 Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
 
-## Source
+## Sources
 
 [A beginner's guide to Big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
 
