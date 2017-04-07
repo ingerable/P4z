@@ -16,7 +16,7 @@ Laptop Asus Intel Core i7-5500U CPU @ `2.40Ghz` x 4
 ## Méthode de test
 
 Nous utilisons un script qui permet d'automatiser les tests. Le script produit
-un fichier de données variant selon les paramètres données au script.
+un fichier de données variant selon les paramètres donnés au script.
 Les paramètres étant les fonctions voulant êtres testées, le nombre de tests
 et le ou les executables voulant être executés. La taille du tableau est generée
 de manière aléatoire dans le script.
@@ -36,9 +36,9 @@ sur la partie informatique pratique. Le plan en découle intrasèquement :
 
 Il est usuel d'écrire des programmes sans étudier en amont et en omettant (souvent) volontairement certains paramètres pourtant essentiels à son fonctionnement :
 
-- Le type et la fréquence du microprocesseur utilisé,
-- Le langage utilisé et le compilateur choisi, ainsi que de ses réglages,
-- Les données d'entrée,
+- Le type et la fréquence du microprocesseur utilisé
+- Le langage utilisé et le compilateur choisi, ainsi que de ses réglages
+- Les données d'entrée
 - La complexité en temps de l'algorithme
 
 Nous voilà maintenant fin prêt. C'est parti !
@@ -63,7 +63,7 @@ L'option `-O2` (c'est un 'O' et non un '0') permet un temps de compilation plus 
 
 ## Mesurer le temps d'exécution
 
-Sous environnement Linux, pour jauger le temps d'exécution d'un programme on utilisera la commande `time` suivante :
+Sous un environnement Linux, pour jauger le temps d'exécution d'un programme on utilisera la commande `time` suivante :
 **time monprogramme.out**
 
 Cette commande affichera les trois lignes suivantes :
@@ -131,7 +131,7 @@ D'ailleurs, je soupçonne **très fortement** qu'une commande similaire ait ét�
 
 ### Problématique : La distance entre deux éléments adjacent interfère t-elle dans le temps d'exécution du tri ?
 
-Nous avons un tableaux contenant des éléments de type long long unsigned int. La distance entre chaque élement adjacent est petite. Par exemple, nous avons : [0,1,0,1,0,1]. Nous avons maintenant un autre tableau, de même taille et la distance entre chaque élément est significative : [1, 1000000000, 1, 1000000000, 1, 1000000000].
+Nous avons un tableau contenant des éléments de type long long unsigned int. La distance entre chaque élement adjacent est petite. Par exemple, nous avons : [0,1,0,1,0,1]. Nous avons maintenant un autre tableau, de même taille et la distance entre chaque élément est significative : [1, 1000000000, 1, 1000000000, 1, 1000000000].
 La dernière étape est de trier ces deux tableaux avec le tri par insertion, le tri fusion ou le tri rapide au choix.
 
 Est-il possible que le temps d'éxecution soit plus important pour le second tableau ?
@@ -142,7 +142,7 @@ Les algorithmes de tris tels que le tri par insertion, le tri rapide et le tri f
 
 [0, 1, 0, 1, 0] et [0, 1000000, 0, 1000000, 0].
 
-En effet, il n'y a aucun moyen de savoir que 1000000 "est plus grand" que 1. Le nombre total d'opérations effectuées pour trier ces tableaux seront parfaitement identiques d'un tableau à l'autre. En fait, si l'on trie chacun de ces tableaux avec ces algorithmes de tri.
+En effet, il n'y a aucun moyen de savoir que 1000000 "est plus grand" que 1. Le nombre total d'opérations effectuées pour trier ces tableaux seront parfaitement identiques d'un tableau à l'autre.
 En fait, si l'on trie chaque tableau avec ces algorithmes et que l'on regarde les éléments se déplacer, on observera que les mouvements exécutés sont les mêmes.
 
 Si l'on se place dans le contexte de trier des entiers qui correspondent à un seul mot machine, alors le coût d'un déplacement est indépendant de la valeur numérique stockée dans ce mot machine. Le coût de comparaison de ces éléments est probablement aussi le même. Il n'y a donc absolument aucune différence dans le temps nécessaire pour trier ces tableaux avec ces algorithmes. En témoigne la figure suivante :
@@ -156,7 +156,7 @@ Cependant, les algorithmes de tri comme le tri de comptage (counting sort) ou le
 
 ## Un peu d'assembleur
 
-Afin de comprendre tous les tenants et les aboutissants d'un programme, il est existe une option `-S` permettant d'afficher le code en assembleur généré par le compilateur. On peut donc observer ce que le microprocesseur va exécuter à chaque boucle. Exemple d'utilisation : `gcc monProgramme.c -S -O2`.
+Afin de comprendre tous les tenants et les aboutissants d'un programme, il existe une option `-S` permettant d'afficher le code en assembleur généré par le compilateur. On peut donc observer ce que le microprocesseur va exécuter à chaque boucle. Exemple d'utilisation : `gcc monProgramme.c -S -O2`.
 
 Les quatre registres de travail sont principalement utilisés pour stocker des résultats :
 
@@ -294,9 +294,9 @@ ret
 .section	.note.GNU-stack,"",@progbits
 ```
 
-Dans le cas du second programme, le compilateur a détecté qu'il était plus efficace de changer le comportement de notre programme initial. En effet, nous observons que cela ne correspond pas à ce que l'on avait écrit en ométtant l'option O2. Néanmoins, notre programme fonctionne correctement. Le compilateur, lorsque les options d'optimisation sont activées peut prendre certaines libertés et réaliser un certain nombre de manipulations sur notre programme lors de la transformation en code exécutable. Vous l'aurez compris, cela nous complexifie grandement la tâche dans notre quête de prédiction du temps d'exécution.
+Dans le cas du second programme, le compilateur a détecté qu'il était plus efficace de changer le comportement de notre programme initial. En effet, nous observons que cela ne correspond pas à ce que l'on avait écrit en ométtant l'option O2. Néanmoins, notre programme fonctionne correctement. Le compilateur, lorsque les options d'optimisation sont activées peut prendre certaines libertés et réaliser un certain nombre de manipulations sur notre programme lors de la transformation en code exécutable. Vous l'aurez compris, cela complexifie grandement la tâche dans notre quête de prédiction du temps d'exécution.
 
-Premièrement, il faut garder à l'idée que les temps d'exécution des différentes instructions du micro-processeur ne sont pas tous les mêmes.
+Premièrement, il faut garder à l'esprit que les temps d'exécution des différentes instructions du micro-processeur ne sont pas tous les mêmes.
 La fréquence d'un microprocesseur est définit par le nombre de cycles qu'il est capable d'exécuter en une seconde. Un microprocesseur ayant une fréquence de 1Ghz peut dont prétendre exécuter un milliard de cycles par seconde. A chaque cycle, le processeur exécute une phase de l'exécution d'une instruction, telle que : la **lire en mémoire**, la **décoder**, **écrire le résultat**, etc. Les processeurs actuels ont la capacité de manipuler diverses instructions en même temps, donc exécuter lors du même cycle, une phase de chacune des instructions qu'il est en train de traiter. Pour illustrer ce propos, le compilateur est apte à lire en mémoire l'instruction suivante au même moment que l'écriture du résultat de l'instruction courante !
 
 Souvent le processeur nécessite plusieurs cycles processeurs pour exécuter entièrement une instruction, mais sur un certain nombre d'instructions consécutives, dont une partie de l'exécution est faite en parallèle, le temps moyen d'exécution d'une instruction peut être bien inférieur, et ne faire qu'un cycle, parfois même moins, mais parfois bien plus, selon le type d'instructions.
@@ -432,7 +432,7 @@ Pareil pour le meilleur des cas mais la différence est plus modérée, néanmoi
 
 ## Tri Insertion
 
-**Complexité** | **Pire des cas Θ(n<sup>2</sup>)** | **Moyenne  Θ(n<sup>2</sup>) ** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
+**Complexité** | **Pire des cas Θ(n<sup>2</sup>)** | **Moyenne  Θ(n<sup>2</sup>)** | **Meilleur des cas $`Θ(n-1)`$ comparaisons et $`Θ(n)`$ affectations** |
 |---|---|---|---|---|
 | **Notes** | Dans le pire cas, lorsque le tableau est trié à l'envers (tableau préalablement trié de manière décroissante), on obtient en sortie | |   |
 |**Courbes** | ![exectime](./Graphs/insertion/insertTousTableaux.png) |
@@ -483,3 +483,12 @@ la problèmatique, ou encore les enjeux derrière le programme, un des trois alg
 précipiter sur un algorithme de tri, étudier son comportement sous différents angles comme on l'a fait. Mon tableau d'entré est-il déjà trié
 ou partiellement trié dans l'ordre croissant ? Est-il trié dans l'ordre décroissant ? Est-il trié aléatoirement ? Quelle taille  possède t-il ?
 Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau, un grand ou un moyen ? Dans ce cas, il faudra définir le terme "grand", "petit" et moyen en fonction du contexte et de la problématique donnée !
+
+## Sources
+
+[A beginner's guide to Big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
+
+[Big O notation - Wikipédia](https://en.wikipedia.org/wiki/Big_O_notation)
+
+[Comparaison asymptotique - Wikipédia](https://fr.wikipedia.org/wiki/Comparaison_asymptotique)
+
