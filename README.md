@@ -1,5 +1,7 @@
 ### Compte rendu P4z
 
+COURREAU Quentin & VAN-ASSCHE Jules
+
 ## Application
 
 Nous testons 3 algorithmes de tri différents :
