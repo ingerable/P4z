@@ -487,6 +487,8 @@ Combien de temps puis-je me permettre ? Et de mémoire ? Est-ce un petit tableau
 ## Source
 
 [A beginner's guide to Big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
+
 [Big O notation - Wikipédia](https://en.wikipedia.org/wiki/Big_O_notation)
+
 [Comparaison asymptotique - Wikipédia](https://fr.wikipedia.org/wiki/Comparaison_asymptotique)
 
